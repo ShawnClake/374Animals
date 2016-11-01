@@ -22,6 +22,16 @@ public class World {
 		
 	}
 	
-	//do getTile, killAnimal and killVegetation functions when return types are known
+	public Tile getTile(int x, int y){
+		
+	}
+	
+	public void killAnimal(int x, int y){
+		
+	}
+	
+	public void killVegetation(int x, int y){
+		
+	}
 
 }
