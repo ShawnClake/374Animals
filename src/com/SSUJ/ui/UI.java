@@ -1,6 +1,7 @@
 package com.SSUJ.ui;
 
 import java.util.Scanner;
+import java.util.*;
 /*******************************************************************************
  * UI
  * 
@@ -25,7 +26,7 @@ public class UI {
 		
 	}
 	
-	public void log(string s){
+	public void log(String s){
 		
 	}
 	
