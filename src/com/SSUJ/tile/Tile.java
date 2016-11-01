@@ -10,5 +10,29 @@ import com.SSUJ.animal.Animal;
  *********************************************************************************/
 
 public class Tile {
+	
+	private Animal animal;
+	private Vegetation vegetation;
+	private int exhaustionLevel;
+	
+	public void generate(){
+		
+	}
+	
+	public Animal getAnimal(){
+		
+	}
+	
+	public void setAnimal(Animal a){
+		
+	}
+	
+	public Vegetation getVegetation(){
+		
+	}
+	
+	public int getExhaustionLevel(){
+		
+	}
 
 }
