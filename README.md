@@ -25,6 +25,7 @@ The [Sask Wildlife] federation has a desire to study the life cycle of animals t
 * Using the simulation
 * A log of daily events
 * Eating animals and vegetation
+* Documentation
 
 ## Planned supported devices ##
 * Java supported platforms
