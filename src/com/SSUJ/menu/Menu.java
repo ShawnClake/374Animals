@@ -12,6 +12,11 @@ public class Menu {
 	
 	private Simulation simulation; //sim that will be run
 	
+	public static void main(String [] args)
+	{
+		
+	}
+	
 	public void begin(){
 		
 	}
