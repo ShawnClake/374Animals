@@ -7,6 +7,13 @@ package com.SSUJ.animal;
  * 		multiple types of animals, each of which will either be a predator or the
  * 		prey.
  * 
+ * Notes: An animals health and hunger can fluctuate, but it's speed will NEVER change
+ *              An animals range of movement accross tiles is speed - Tile.getExhaustionLevel()
+                When an animal is eaten, it's health determines how much food the eating animal is given
+		Predator > Prey
+		Predator with higher eatsLevel > Predator with lower eatsLevel
+		Prey with higher eatsLevel > Prey with lower eatsLevel
+		changeHealth and changeHunger are realitve whereas setHealth and setHunger are absolute
  *********************************************************************************/
 
 public class Animal {
@@ -80,8 +87,6 @@ public class Animal {
 	public int getMaxHunger(){
 		
 	}
-	
-	
 
 }
 
