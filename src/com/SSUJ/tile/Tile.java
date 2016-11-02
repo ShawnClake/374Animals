@@ -23,7 +23,7 @@ public class Tile {
 		
 	}
 	
-	public void setAnimal(Animal a){
+	public void setAnimal(Animal animal){
 		
 	}
 	
