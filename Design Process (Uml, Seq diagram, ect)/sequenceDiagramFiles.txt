@@ -1,0 +1,52 @@
+https://www.websequencediagrams.com/
+
+
+title Initialization Sequence
+
+
+Simulation->World: calls generate()
+
+note right of World: hinks about it
+
+World->Tile: generate()
+
+note right of Tile: This generate function is unique from world.generate,
+
+note right of Tile: It generates what is on the tile (veg, animal, null)
+
+note right of Tile: By use of a random number generator
+
+Tile->Vegetation: generate()
+
+Tile->Animal: generate()
+
+Sequence of one day:
+UI waiting for input, user enters "progress one day"
+Simulation.nextDay->World: calls World.nextDay;
+Note right of World: world.next then loops through the map (list of tiles)
+World->Tile: getAnimal();
+If a tile has an animal the following occurs
+World->Tile: getExhaustionLevel;
+World->Animal: Tile.getAnimal().getSpeed();
+Note right of World: with tile exhaustion and animal known a random number generator is used to determine direction of travel
+Note right of World: Tile is checked for animal
+World->Tile: getAnimal();
+Note right of World: using EatType enumeration amd eatsLevel value one animal is selected as the survivor and the other the victim
+World->Animal: Animal.kill();
+Animal->Animal: changeHunger();
+Note right of Animal: hunger is increased proportional to the deceased animal's remaining health
+If a tile has no animal but does have vegitation:
+World->Vegetation: Tile.getVegetation().eat()
+World->Animal: Tile.getAnimal().changeHunger();
+Note right of Animal: hunger is increased proportional to the food level of the vegatation
+
+
+
+Sequence of log prints event
+title Log Prints Events
+note over World: Initiated after a day of events has occured
+note over World: During the course of a day events are 
+note over World: continually appended to a string 
+World->UI: Log(String)
+note right of UI: where string has value eventString
+UI->UI: Prints out eventString to console
