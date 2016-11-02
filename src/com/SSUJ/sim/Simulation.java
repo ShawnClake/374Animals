@@ -35,4 +35,9 @@ public class Simulation {
 		
 	}
 	
+	public void nexDay()
+	{
+		
+	}
+	
 }
