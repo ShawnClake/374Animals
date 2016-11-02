@@ -9,6 +9,7 @@ An animal simulator made as a project for Software Engineering 374 lab at the Un
 
 ## Overview ##
 The [Sask Wildlife] federation has a desire to study the life cycle of animals that live in a certain habitat in Saskatchewan. They would like our students to model their habitat and create a software simulation modelling their life cycle. The animals will be placed in a virtual world and seek out food and will live or die depending on what happens in their world.
+
 (Trevor Douglas, 2016) - Pulled from Lab 4 assignment handout
 
 ## Current Feature List ##
