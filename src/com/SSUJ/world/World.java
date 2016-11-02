@@ -18,7 +18,7 @@ public class World {
 		
 	}
 	
-	public int nextDay(){
+	public String nextDay(){
 		
 	}
 	
