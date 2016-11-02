@@ -20,11 +20,11 @@ The [Sask Wildlife] federation has a desire to study the life cycle of animals t
 * Generating a simulation
 * Adding a UI
 * Adding x number of animals and y number of vegetation
+* Eating animals and vegetation
 
 ## Planned Features ##
 * Using the simulation
 * A log of daily events
-* Eating animals and vegetation
 * Documentation
 
 ## Planned supported devices ##
