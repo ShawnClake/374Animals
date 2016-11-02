@@ -12,6 +12,7 @@ public class Vegetation {
 	private int foodLevel;
 	private String name;
 	private String description;
+	private int maxFoodLevel;
 	
 	public void generate(){
 		
@@ -31,6 +32,11 @@ public class Vegetation {
 	
 	public int eat(){
 		//returns the food level
+	}
+	
+	public int getMaxFoodLevel()
+	{
+		
 	}
 
 }
