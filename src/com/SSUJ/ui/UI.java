@@ -26,7 +26,7 @@ public class UI {
 		
 	}
 	
-	public void log(String s){
+	public void log(List<String> dayEvents){
 		
 	}
 	
