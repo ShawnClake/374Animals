@@ -27,64 +27,90 @@ public class Animal {
 	private int maxHunger;
 	private String name;
 	private String description;
-	
-	public void generate(){
+	private boolean done; // Whether or not the animal is done for the day or not
+
+	public boolean getDone()
+	{
+		return this.done;
+	}
+
+	public void setDone(boolean done)
+	{
+		this.done = done;
+	}
+
+	public void generate()
+	{
 		
 	}
 	
-	public EatType getEats(){
+	public EatType getEats()
+	{
 		
 	}
 	
-	public int getEatsLevel(){
+	public int getEatsLevel()
+	{
 		
 	}
 	
-	public int getHunger(){
+	public int getHunger()
+	{
 		
 	}
 	
-	public int getHealth(){
+	public int getHealth()
+	{
 		
 	}
 	
-	public int getSpeed(){
+	public int getSpeed()
+	{
 		
 	}
 	
-	public String getName(){
+	public String getName()
+	{
 		
 	}
 	
-	public String getDescription(){
+	public String getDescription()
+	{
 		
 	}
 	
-	public void setHunger(int hunger){
+	public void setHunger(int hunger)
+	{
 		
 	}
 	
-	public void changeHunger(int hunger){
+	public void changeHunger(int hunger)
+	{
 		
 	}
 	
-	public void setHealth(int health){
+	public void setHealth(int health)
+	{
 		
 	}
 	
-	public void changeHealth(int health){
+	public void changeHealth(int health)
+	{
 		
 	}
 	
-	public int kill(){
+	public int kill()
+	{
 		//return its current health prior to kill as food for eater to add
 	}
 	
-	public int getMaxHealth(){
+	public int getMaxHealth()
+	{
 		
 	}
 	
-	public int getMaxHunger(){
+	public int getMaxHunger()
+	{
 		
 	}
 

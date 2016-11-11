@@ -15,29 +15,34 @@ public class Simulation {
 	private int length;
 	private UI ui;
 	
-	public World getWorld(){
-		
-	}
-	
-	public int getLength(){
-		
-	}
-	
-	public int setLength(){
-		
-	}
-	
-	public void initialize(){
-		
-	}
-	
-	public UI getUI(){
-		
-	}
-	
-	public void nexDay()
+	public World getWorld()
 	{
 		
+	}
+	
+	public int getLength()
+	{
+		
+	}
+	
+	public int setLength()
+	{
+		
+	}
+	
+	public void initialize()
+	{
+		
+	}
+	
+	public UI getUI()
+	{
+		
+	}
+	
+	public void nextDay()
+	{
+		ui.log(world.nextDay());
 	}
 	
 }
