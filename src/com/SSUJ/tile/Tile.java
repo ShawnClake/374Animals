@@ -15,24 +15,34 @@ public class Tile {
 	private Vegetation vegetation;
 	private int exhaustionLevel;
 	
-	public void generate(){
+	public void generate()
+	{
 		
 	}
 	
-	public Animal getAnimal(){
-		
+	public Animal getAnimal()
+	{
+		return this.animal;
 	}
 	
-	public void setAnimal(Animal animal){
-		
+	public void setAnimal(Animal animal)
+	{
+		this.animal = animal;
 	}
 	
-	public Vegetation getVegetation(){
-		
+	public Vegetation getVegetation()
+	{
+		return this.vegetation;
+	}
+
+	public void setVegetation(Vegetation vegetation)
+	{
+		this.vegetation = vegetation;
 	}
 	
-	public int getExhaustionLevel(){
-		
+	public int getExhaustionLevel()
+	{
+		return this.exhaustionLevel;
 	}
 
 }

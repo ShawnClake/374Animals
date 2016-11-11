@@ -110,7 +110,15 @@ public class World {
 						}
 					} else {
 						// Animal on plant collision.
+						tile2.setAnimal(animal);
+						tile.setAnimal(null);
 
+						if(vegetation2 != null)
+						{
+							vegetation2.eat();
+
+							tile2.setVe
+						}
 					}
 
 					// Drop animal health if its hungry
