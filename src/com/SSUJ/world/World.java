@@ -49,6 +49,9 @@ public class World {
 					int exhaustion = tile.getExhaustionLevel();
 					int speed = animal.getSpeed() - exhaustion;
 
+					// Handle hunger drop for the movement
+					animal.changeHunger(speed * -1);
+
 					int i = 0; // Overall Change in X direction
 					int j = 0; // Overall Change in Y direction
 
@@ -78,12 +81,13 @@ public class World {
 						n2 = this.x - 1;
 
 					Tile tile2 = getTile(n2, m2);
-					Animal animal2 = tile.getAnimal();
-					Vegetation vegetation2 = tile.getVegetation();
+					Animal animal2 = tile2.getAnimal();
+					Vegetation vegetation2 = tile2.getVegetation();
 
 					// Collision will happen
 					if(animal2 != null)
-					{
+					{ // Animal on Animal collision
+
 						// Generating the overall eat level by taking into account predator vs prey
 						int eatLevel = animal.getEatsLevel();
 						if(animal.getEats() == EatType.PREDATOR)
@@ -96,19 +100,41 @@ public class World {
 						if(eatLevel >= eatLevel2)
 						{ // Animal eats the animal on the new tile
 							animal.changeHunger(animal2.kill());
-
+							tile2.setAnimal(animal);
+							tile.setAnimal(null);
 						}
 						else
 						{ // Animal is eaten by the animal on the new tile
-
+							animal2.changeHunger(animal.kill());
+							tile.setAnimal(null);
 						}
+					} else {
+						// Animal on plant collision.
+
 					}
+
+					// Drop animal health if its hungry
+
+					// Marking the animal as having moved already this day
+					animal.setDone(true);
 
 				}
 			}
 		}
 
 		day++;
+
+		// Resetting the animals to be ready for a new day
+		for(int m = 0; m < y; m++) // Y direction
+		{
+			for(int n = 0; n < x; n++) // X direction
+			{
+				if(getTile(n, m).getAnimal() != null)
+				{
+					getTile(n, m).getAnimal().setDone(false);
+				}
+			}
+		}
 
 		return events;
 	}

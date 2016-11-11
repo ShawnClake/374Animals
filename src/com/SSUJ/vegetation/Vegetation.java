@@ -32,6 +32,7 @@ public class Vegetation {
 	
 	public int eat(){
 		//returns the food level
+		return this.foodLevel;
 	}
 	
 	public int getMaxFoodLevel()
