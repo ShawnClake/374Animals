@@ -137,7 +137,7 @@ public class World {
 							tile2.setAnimal(null);
 						}
 					}
-					
+
 					// Marking the animal as having moved already this day
 					animal.setDone(true);
 
@@ -164,17 +164,33 @@ public class World {
 	
 	public Tile getTile(int x, int y)
 	{
-		
+		return this.map[y][x];
 	}
 	
-	public void killAnimal(int x, int y)
+	public int killAnimal(int x, int y)
 	{
-		
+		Tile tile = getTile(x, y);
+		if(tile.getAnimal() != null)
+		{
+			int food = tile.getAnimal().kill();
+			tile.setAnimal(null);
+			return food;
+		}
+
+		return 0;
 	}
 	
-	public void killVegetation(int x, int y)
+	public int killVegetation(int x, int y)
 	{
-		
+		Tile tile = getTile(x, y);
+		if(tile.getVegetation() != null)
+		{
+			int food = tile.getVegetation().eat();
+			tile.setVegetation(null);
+			return food;
+		}
+
+		return 0;
 	}
 
 }
