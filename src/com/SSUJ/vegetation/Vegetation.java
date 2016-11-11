@@ -14,25 +14,32 @@ public class Vegetation {
 	private String description;
 	private int maxFoodLevel;
 	
-	public void generate(){
+	public void generate()
+	{
 		
 	}
 	
-	public int getFoodLevel(){
+	public int getFoodLevel()
+	{
 		
 	}
 	
-	public String getName(){
+	public String getName()
+	{
 		
 	}
 	
-	public String getDescription(){
+	public String getDescription()
+	{
 		
 	}
 	
-	public int eat(){
+	public int eat()
+	{
 		//returns the food level
-		return this.foodLevel;
+		int tempFood = this.foodLevel;
+		this.foodLevel = 0;
+		return tempFood;
 	}
 	
 	public int getMaxFoodLevel()

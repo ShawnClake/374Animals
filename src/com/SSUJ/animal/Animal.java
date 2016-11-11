@@ -89,6 +89,8 @@ public class Animal {
 		this.hunger += hunger;
 		if(this.hunger > this.maxHunger)
 			this.hunger = this.maxHunger;
+		if(this.hunger < 0)
+			this.hunger = 0;
 	}
 	
 	public void setHealth(int health)
@@ -98,7 +100,16 @@ public class Animal {
 	
 	public void changeHealth(int health)
 	{
-		
+		this.health += health;
+		if(this.health > this.maxHealth)
+			this.health = this.maxHealth;
+		if(this.health < 0)
+			this.health = 0;
+	}
+
+	public boolean dead()
+	{
+		return this.health <= 0;
 	}
 	
 	public int kill()
