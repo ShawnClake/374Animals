@@ -27,6 +27,7 @@ public class World {
 	{
 		this.x = x;
 		this.y = y;
+		this.day = 0;
 	}
 	
 	public List<String> nextDay()
@@ -34,6 +35,8 @@ public class World {
 		List<String> events = new ArrayList<>();
 
 		Random rand = new Random();
+
+		events.add("Day: " + this.day);
 
 		for(int m = 0; m < y; m++) // Y direction
 		{
@@ -80,6 +83,8 @@ public class World {
 					if(n2 >= this.x)
 						n2 = this.x - 1;
 
+					events.add(animal.getName() + " at (" + n + "," + m + ") moved to (" + n2 + "," + m2 + ").");
+
 					Tile tile2 = getTile(n2, m2);
 					Animal animal2 = tile2.getAnimal();
 					Vegetation vegetation2 = tile2.getVegetation();
@@ -104,12 +109,16 @@ public class World {
 							animal.changeHunger(animal2.kill());
 							tile2.setAnimal(animal);
 							tile.setAnimal(null);
+
+							events.add(animal.getName() + " encountered a " + animal2.getName() + " and killed it.");
 						}
 						else
 						{ // Animal is eaten by the animal on the new tile
 							animal2.changeHunger(animal.kill());
 							tile.setAnimal(null);
 							killed = true;
+
+							events.add(animal.getName() + " encountered a " + animal2.getName() + " and was killed by it.");
 						}
 
 					} else if(vegetation2 != null) {
@@ -119,6 +128,8 @@ public class World {
 
 						tile2.getAnimal().changeHunger(vegetation2.eat());
 						tile2.setVegetation(null);
+
+						events.add(animal.getName() + " found " + vegetation2.getName() + " and ate it.");
 
 					} else {
 						// Simple animal movement
@@ -135,6 +146,11 @@ public class World {
 						if(animal.dead())
 						{
 							tile2.setAnimal(null);
+							events.add(animal.getName() + " died by starvation.");
+						}
+						else
+						{
+							events.add(animal.getName() + " is slowly starving to death.");
 						}
 					}
 
