@@ -84,7 +84,7 @@ public class World {
 					Animal animal2 = tile2.getAnimal();
 					Vegetation vegetation2 = tile2.getVegetation();
 
-					boolean died = false;
+					boolean killed = false;
 
 					// Collision will happen
 					if(animal2 != null)
@@ -109,7 +109,7 @@ public class World {
 						{ // Animal is eaten by the animal on the new tile
 							animal2.changeHunger(animal.kill());
 							tile.setAnimal(null);
-							died = true;
+							killed = true;
 						}
 
 					} else if(vegetation2 != null) {
@@ -127,14 +127,17 @@ public class World {
 					}
 
 					// Drop animal health if its hungry
-					if(!died)
+					if(!killed)
 					{
-						int dmg = (int)((double)animal.getMaxHealth() * 0.05);
+						int dmg = (int)(Math.ceil((double)animal.getMaxHealth() * 0.05));
 						animal.changeHealth(dmg);
+
+						if(animal.dead())
+						{
+							tile2.setAnimal(null);
+						}
 					}
-
-
-
+					
 					// Marking the animal as having moved already this day
 					animal.setDone(true);
 
