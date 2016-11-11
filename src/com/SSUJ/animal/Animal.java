@@ -86,7 +86,9 @@ public class Animal {
 	
 	public void changeHunger(int hunger)
 	{
-		
+		this.hunger += hunger;
+		if(this.hunger > this.maxHunger)
+			this.hunger = this.maxHunger;
 	}
 	
 	public void setHealth(int health)
@@ -102,6 +104,9 @@ public class Animal {
 	public int kill()
 	{
 		//return its current health prior to kill as food for eater to add
+		int tempHealth = health;
+		health = 0;
+		return tempHealth;
 	}
 	
 	public int getMaxHealth()

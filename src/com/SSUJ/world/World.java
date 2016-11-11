@@ -1,6 +1,7 @@
 package com.SSUJ.world;
 
 import com.SSUJ.animal.Animal;
+import com.SSUJ.animal.EatType;
 import com.SSUJ.tile.Tile;
 import com.SSUJ.vegetation.Vegetation;
 
@@ -66,6 +67,7 @@ public class World {
 					int m2 = m + j; // Coords of the destination tile in Y direction
 					int n2 = n + i; // Coords of the destination tile in X direction
 
+					// Ensuring we stay on the map
 					if(m2 < 0)
 						m2 = 0;
 					if(n2 < 0)
@@ -75,6 +77,32 @@ public class World {
 					if(n2 >= this.x)
 						n2 = this.x - 1;
 
+					Tile tile2 = getTile(n2, m2);
+					Animal animal2 = tile.getAnimal();
+					Vegetation vegetation2 = tile.getVegetation();
+
+					// Collision will happen
+					if(animal2 != null)
+					{
+						// Generating the overall eat level by taking into account predator vs prey
+						int eatLevel = animal.getEatsLevel();
+						if(animal.getEats() == EatType.PREDATOR)
+							eatLevel += 1000;
+
+						int eatLevel2 = animal2.getEatsLevel();
+						if(animal2.getEats() == EatType.PREDATOR)
+							eatLevel2 += 1000;
+
+						if(eatLevel >= eatLevel2)
+						{ // Animal eats the animal on the new tile
+							animal.changeHunger(animal2.kill());
+
+						}
+						else
+						{ // Animal is eaten by the animal on the new tile
+
+						}
+					}
 
 				}
 			}
