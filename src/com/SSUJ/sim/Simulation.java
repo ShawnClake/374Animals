@@ -34,10 +34,14 @@ public class Simulation {
 	public void initialize()
 	{
 		/**
-		 * Calls generate from world for as many tiles as are needed, default is 
+		 * Calls generate from world for as many tiles as are needed, default is 25 
 		 */
-		world.generate(25,25);
-
+		if(length>0){ 
+		world.generate(length,length);
+		}
+		else {
+			world.generate(25,25);			
+		}
 
 		
 	}

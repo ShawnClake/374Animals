@@ -43,15 +43,15 @@ public class World {
 		this.y = y;
 		this.day = 0;
 		
-		for(int z=0;z<x;z++){
+		for(int n=0;n<x;n++){
 			
-			for(int j=0;j<y;j++){
+			for(int m=0;m<y;m++){
 				
 				int randomExhaustion = rn.nextInt() % rangeExhaustionLevel;
 				int randomAnimal = rn.nextInt() % rangeAnimal;
 				int randomVegetation = rn.nextInt() % rangeVegetation;
 				
-				map[z][j].generate(randomAnimal,randomVegetation,randomExhaustion);
+				map[n][m].generate(randomAnimal,randomVegetation,randomExhaustion);
 				
 			}
 		}

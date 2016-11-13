@@ -1,5 +1,8 @@
 package com.SSUJ.tile;
 
+import com.SSUJ.vegetation.Grass;
+import com.SSUJ.vegetation.Shrub;
+import com.SSUJ.vegetation.Tree;
 import com.SSUJ.vegetation.Vegetation;
 import com.SSUJ.animal.Animal;
 import com.SSUJ.animal.Bluejay;
@@ -31,8 +34,10 @@ public class Tile {
 	public void generate(int animalInt, int vegetationInt, int exhaustionInt)
 	{
 		Animal animalChoice = null;
-		
-			if(animalInt < 11){
+		Vegetation vegetationChoice = null;
+
+		//Animal selector
+			if(animalInt <= 11){
 				animalChoice = null;	
 			}
 			else if(animalInt==12){
@@ -44,46 +49,56 @@ public class Tile {
 				animalChoice = choice;	
 			}
 			else if(animalInt==14){
-				Bluejay choice = null;
+				Deer choice = null;
 				animalChoice = choice;	
 			}
 			else if(animalInt==15){
-				Bluejay choice = null;
+				Fox choice = null;
 				animalChoice = choice;	
 			}
 			else if(animalInt==16){
-				Bluejay choice = null;
+				Grasshoper choice = null;
 				animalChoice = choice;	
 			}
 			else if(animalInt==17){
-				Bluejay choice = null;
+				Hawk choice = null;
 				animalChoice = choice;	
 			}
 			else if(animalInt==18){
-				Bluejay choice = null;
+				Mouse choice = null;
 				animalChoice = choice;	
 			}
 			else if(animalInt==19){
-				Bluejay choice = null;
+				Rabbit choice = null;
 				animalChoice = choice;	
 			}
 			else if(animalInt==20){
-				Bluejay choice = null;
+				Squirrel choice = null;
 				animalChoice = choice;	
 			}
 			else if(animalInt==21){
-				Bluejay choice = null;
+				Wolf choice = null;
 				animalChoice = choice;	
 			}
+			//Vegetation Selector
+			if(animalInt == 0){
+				Grass choice = null;
+				vegetationChoice = choice;	
+			}
+			else if(animalInt==1){
+				Shrub choice = null;
+				vegetationChoice = choice;	
+			}
+			else if(animalInt==2){
+				Tree choice = null;
+				vegetationChoice = choice;	
+			}
 			
+			
+			//Set all values for the tile
 			this.setAnimal(animalChoice);
-		
-			
-			
-			
-			
-			
-			
+			this.setVegetation(vegetationChoice);
+			this.setExhaustionLevel(exhaustionInt);			
 	}
 	
 	public Animal getAnimal()
