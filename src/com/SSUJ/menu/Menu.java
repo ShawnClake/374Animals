@@ -14,11 +14,12 @@ public class Menu {
 	
 	public static void main(String [] args)
 	{
-		simulation.initialize();
+		Simulation sim = new Simulation();
+		sim.initialize();
 	}
 	
 	public void begin(){
-		
+
 	}
 	
 	public void quit(){

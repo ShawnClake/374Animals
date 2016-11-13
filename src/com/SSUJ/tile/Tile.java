@@ -81,15 +81,15 @@ public class Tile {
 				animalChoice = choice;	
 			}
 			//Vegetation Selector
-			if(animalInt == 0){
+			if(vegetationInt == 0){
 				Grass choice = null;
 				vegetationChoice = choice;	
 			}
-			else if(animalInt==1){
+			else if(vegetationInt==1){
 				Shrub choice = null;
 				vegetationChoice = choice;	
 			}
-			else if(animalInt==2){
+			else if(vegetationInt==2){
 				Tree choice = null;
 				vegetationChoice = choice;	
 			}

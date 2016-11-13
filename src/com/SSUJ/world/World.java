@@ -42,16 +42,21 @@ public class World {
 		this.x = x;
 		this.y = y;
 		this.day = 0;
-		
+		Tile[][] mapp = new Tile[x][y];
+
 		for(int n=0;n<x;n++){
 			
 			for(int m=0;m<y;m++){
 				
-				int randomExhaustion = rn.nextInt() % rangeExhaustionLevel;
-				int randomAnimal = rn.nextInt() % rangeAnimal;
-				int randomVegetation = rn.nextInt() % rangeVegetation;
+				int randomExhaustion = ((rn.nextInt(65536)) % rangeExhaustionLevel);
+				int randomAnimal = ((rn.nextInt(65536)) % rangeAnimal);
+				int randomVegetation = ((rn.nextInt(65536)) % rangeVegetation);
 				
-				map[n][m].generate(randomAnimal,randomVegetation,randomExhaustion);
+				//sim.initialize();
+				Tile gen = new Tile();
+				gen.generate(randomAnimal,randomVegetation,randomExhaustion);
+				
+				mapp[n][m] = gen;
 				
 			}
 		}
