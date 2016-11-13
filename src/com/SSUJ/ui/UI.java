@@ -17,22 +17,22 @@ import java.util.Arrays;
 public class UI {
 	
 	private Scanner in;
-	private System.out out;
+	//private System.out out;
 	
 	public Scanner getIn(){
 		return this.in;
 	}
 	
-	public System.out getOut(){
+	/*public System.out getOut(){
 		return this.out;
-	}
+	}*/
 	
 	public void instructions(){
 		//how the simulation works in general
 	}
 	
-	public void printWorld(){//send world variable so we can use map
-		printTileSymbol(map[y][x]);
+	public void printWorld(World world){//send world variable so we can use map
+		printTileSymbol(world.map);
 		//print out line of column numbers
 		//double loop to print out rest of map
 		//print row number, then tiles

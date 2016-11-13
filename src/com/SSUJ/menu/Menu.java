@@ -53,8 +53,12 @@ public class Menu {
 	
 	public static void begin(Simulation sim){
 		sim.getUI().instructions();
-		//get days and map size
+		//get days and x and y sizes
+		
+		//initialize the simulation
 		sim.initialize();
+		//run the simulation
+		sim.simulate();
 	}
 	
 	public static void quit(){

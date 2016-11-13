@@ -47,6 +47,15 @@ public class Simulation {
 	
 	public void simulate(){
 		//loop through days
+		for(int i = 0; i <= this.length; i++){
+			//call next day
+			//print out log
+			nextDay();
+			//print out world
+			ui.printWorld();
+			//print out days remaining
+			ui.daysRemaining(length, world.getDay());
+		}
 	}
 	
 }
