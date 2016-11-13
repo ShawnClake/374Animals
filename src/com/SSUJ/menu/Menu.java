@@ -14,7 +14,7 @@ public class Menu {
 	
 	public static void main(String [] args)
 	{
-		
+		simulation.initialize();
 	}
 	
 	public void begin(){

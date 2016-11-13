@@ -22,12 +22,40 @@ public class World {
 	private int y; // Size of map in y dir
 	private Tile[][] map; // The map array is formatted like: Tile[y][x] WHERE top left corner is 0,0
 	private int day;
+	/**
+	 * Random number generator is used to set animal, vegetation, exhaustion level
+	 */
+	Random rn = new Random();
+	int maxExhaustionLevel = 10;
+	int minExhaustionLevel = 0;
+	int rangeExhaustionLevel = maxExhaustionLevel - minExhaustionLevel + 1;
+	int maxAnimal = 21;
+	int minAnimal = 0;
+	int rangeAnimal = maxAnimal - minAnimal + 1;
+	int maxVegetation = 2;
+	int minVegetation = 0;
+	int rangeVegetation = maxVegetation - minVegetation + 1;	
+	
 	
 	public void generate(int x, int y)
 	{
 		this.x = x;
 		this.y = y;
 		this.day = 0;
+		
+		for(int z=0;z<x;z++){
+			
+			for(int j=0;j<y;j++){
+				
+				int randomExhaustion = rn.nextInt() % rangeExhaustionLevel;
+				int randomAnimal = rn.nextInt() % rangeAnimal;
+				int randomVegetation = rn.nextInt() % rangeVegetation;
+				
+				map[z][j].generate(randomAnimal,randomVegetation,randomExhaustion);
+				
+			}
+		}
+		
 	}
 	
 	public List<String> nextDay()

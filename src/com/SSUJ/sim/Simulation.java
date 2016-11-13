@@ -17,27 +17,34 @@ public class Simulation {
 	
 	public World getWorld()
 	{
-		
+		return world;
 	}
 	
 	public int getLength()
 	{
-		
+		return length;
 	}
 	
-	public int setLength()
+	public int setLength(int l)
 	{
-		
+		this.length = l;
+		return length;
 	}
 	
 	public void initialize()
 	{
+		/**
+		 * Calls generate from world for as many tiles as are needed, default is 
+		 */
+		world.generate(25,25);
+
+
 		
 	}
 	
 	public UI getUI()
 	{
-		
+		return ui;
 	}
 	
 	public void nextDay()
