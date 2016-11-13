@@ -50,7 +50,7 @@ public class Menu {
 	}
 	
 	public static void begin(){
-		
+		simulation.initialize();
 	}
 	
 	public static void quit(){
@@ -58,6 +58,11 @@ public class Menu {
 	}
 	
 	public static void about(){
+		System.out.println("Animals");
+		System.out.println("Version 1.0");
+		System.out.println("2016 - SSUJ ");
+		System.out.println("");
+		System.out.print("Animals was created by SSUJ for the Sask Wildlife federation. ");
 		
 	}
 

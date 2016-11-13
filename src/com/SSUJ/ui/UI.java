@@ -1,7 +1,8 @@
 package com.SSUJ.ui;
 
 import java.util.Scanner;
-import java.util.*;
+import java.util.List;
+import java.util.Arrays;
 /*******************************************************************************
  * UI
  * 
@@ -27,7 +28,8 @@ public class UI {
 	}
 	
 	public void log(List<String> dayEvents){
-		
+		//printing out the days events
+		System.out.println(Arrays.toString(dayEvents.toArray()));
 	}
 	
 	public void daysRemaining(){
