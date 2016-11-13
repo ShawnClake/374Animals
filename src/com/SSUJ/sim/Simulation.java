@@ -17,12 +17,12 @@ public class Simulation {
 	
 	public World getWorld()
 	{
-		
+		return this.world;
 	}
 	
 	public int getLength()
 	{
-		
+		return this.length;
 	}
 	
 	public int setLength()

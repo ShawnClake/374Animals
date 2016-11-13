@@ -51,7 +51,9 @@ public class Menu {
 	
 	public static void begin(){
 		simulation.initialize();
+		simulation.getUI().instructions();
 		for(int i = 0; i <= simulation.getLength(); i++){
+			
 			simulation.nextDay();
 		}
 	}
