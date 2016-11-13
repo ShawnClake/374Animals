@@ -1,6 +1,7 @@
 package com.SSUJ.menu;
 
 import com.SSUJ.sim.Simulation;
+import java.util.Scanner;
 /*******************************************************************************
  * Menu
  * 
@@ -14,6 +15,12 @@ public class Menu {
 	
 	public static void main(String [] args)
 	{
+		System.out.println("Welcome to Animals!");
+		System.out.println("Please select one of the following options:");
+		System.out.println("Begin -> begin the simulation.");
+		System.out.println("Quit -> quit the simulation.");
+		System.out.println("About -> get information about this simulation.");
+		
 		
 	}
 	
@@ -22,7 +29,7 @@ public class Menu {
 	}
 	
 	public void quit(){
-		
+		System.out.println("Quitting the simulation...");
 	}
 	
 	public void about(){

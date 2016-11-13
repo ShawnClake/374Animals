@@ -15,11 +15,11 @@ public class UI {
 	private System.out out;
 	
 	public Scanner getIn(){
-		
+		return in;
 	}
 	
 	public System.out getOut(){
-		
+		return out;
 	}
 	
 	public void instructions(){
