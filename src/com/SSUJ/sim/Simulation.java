@@ -25,9 +25,9 @@ public class Simulation {
 		return this.length;
 	}
 	
-	public int setLength()
+	public void setLength(int l)
 	{
-		
+		this.length = l;
 	}
 	
 	public void initialize()
@@ -37,12 +37,16 @@ public class Simulation {
 	
 	public UI getUI()
 	{
-		
+		return this.ui;
 	}
 	
 	public void nextDay()
 	{
 		ui.log(world.nextDay());
+	}
+	
+	public void simulate(){
+		//loop through days
 	}
 	
 }

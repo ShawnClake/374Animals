@@ -28,26 +28,33 @@ public class UI {
 	}
 	
 	public void instructions(){
-		//does this give the option to print world??
+		//how the simulation works in general
 	}
 	
-	public void printWorld(){
+	public void printWorld(){//send world variable so we can use map
+		printTileSymbol(map[y][x]);
 		//print out line of column numbers
 		//double loop to print out rest of map
 		//print row number, then tiles
-		//* represents a plant, & is an animal
+		//* represents a plant, & is an animal, # plant & animal, use print tile symbol to determine these
 	}
 	
-	public void printTile(int x, int y){
-		Tile tile = world.map[x][y];
+	public void printTileSymbol(){
+		
+	}
+	
+	public void printTile(Tile tile){
 		//animals
-		Animal animal = tile.getAnimal();
+		tile.getAnimal();
+		//print out values
+		
 		//vegetation
-		Vegetation veg = tile.getVegetation();
+		tile.getVegetation();
 	}
 	
 	public void log(List<String> dayEvents){
 		//printing out the days events
+		//may need a loop instead
 		System.out.println(Arrays.toString(dayEvents.toArray()));
 	}
 	

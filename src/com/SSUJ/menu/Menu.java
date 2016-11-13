@@ -11,10 +11,12 @@ import java.util.Scanner;
  *********************************************************************************/
 public class Menu {
 	
-	private static Simulation simulation; //sim that will be run
+	
 	
 	public static void main(String [] args)
 	{
+		Simulation simulation = new Simulation(); //sim that will be run
+		
 		System.out.println("Welcome to Animals!");
 		String choice = "";
 		RUN:
@@ -35,7 +37,7 @@ public class Menu {
 				System.out.println("Please enter either 'begin', 'quit', or 'about'");
 			}
 			if(choice.equals("begin")){
-				begin();
+				begin(simulation);
 				continue RUN;
 			}
 			if(choice.equals("about")){
@@ -49,13 +51,10 @@ public class Menu {
 		
 	}
 	
-	public static void begin(){
-		simulation.initialize();
-		simulation.getUI().instructions();
-		for(int i = 0; i <= simulation.getLength(); i++){
-			
-			simulation.nextDay();
-		}
+	public static void begin(Simulation sim){
+		sim.getUI().instructions();
+		//get days and map size
+		sim.initialize();
 	}
 	
 	public static void quit(){
@@ -64,8 +63,9 @@ public class Menu {
 	
 	public static void about(){
 		System.out.println("Animals");
-		System.out.println("Version 1.0");
+		System.out.println("Version 0.1");
 		System.out.println("2016 - SSUJ ");
+		System.out.println("Authors: Shawn Clake, Jennifer Herasymuik, Sam Dietrich, Uys Kriek");
 		System.out.println("");
 		System.out.print("Animals was created by SSUJ for the Sask Wildlife federation. ");
 		
