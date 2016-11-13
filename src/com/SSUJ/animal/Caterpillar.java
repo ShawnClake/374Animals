@@ -14,7 +14,7 @@ public class Caterpillar extends Animal {
 		
 		
 		eatsLevel = 1;
-		hunger = 0;		
+		hunger = 10;		
 		health = 10;
 		speed = 1;
 		maxHealth = 10;
@@ -22,6 +22,8 @@ public class Caterpillar extends Animal {
 		name = "Catepillar";
 		description = "Catepillar: Eats leaves only and is eaten by bluejay";
 				
+		eats = EatType.PREY;
+		done = false;
 		
 		
 		

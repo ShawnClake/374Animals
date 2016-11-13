@@ -9,8 +9,8 @@ public void generate(){
 	int x = ran.nextInt(11) + 10;		//Random number between 10-20
 	
 	
-		eatsLevel = 1;
-		hunger = 0;		
+		eatsLevel = 5;
+		hunger = 30;		
 		health = x;
 		speed = 3;
 		maxHealth = 30;
@@ -18,7 +18,8 @@ public void generate(){
 		name = "Rabbit";
 		description = "Rabbit: Eats grass only and is eaten by wolves and foxes";
 				
-		
+		eats = EatType.PREY;
+		done = false;
 		
 		
 	}

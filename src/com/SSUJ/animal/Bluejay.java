@@ -9,8 +9,8 @@ public void generate(){
 	int x = ran.nextInt(11) + 10;		//Random number between 10-20
 	
 	
-		eatsLevel = 2;
-		hunger = 0;		//All animals start at zero hunger. 
+		eatsLevel = 1;
+		hunger = 30;		//All animals start at zero hunger. 
 		health = x;
 		speed = 3;
 		
@@ -20,7 +20,8 @@ public void generate(){
 		name = "Bluejay";
 		description = "Bluejay: Eats from shrubs and catepillars. Is eaten by the fox.";
 		
-		
+		eats = EatType.PREDATOR;
+		done = false;
 				
 		
 		
