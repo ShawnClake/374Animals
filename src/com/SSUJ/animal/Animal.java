@@ -27,64 +27,106 @@ public class Animal {
 	private int maxHunger;
 	private String name;
 	private String description;
-	
-	public void generate(){
+	private boolean done; // Whether or not the animal is done for the day or not
+
+	public boolean getDone()
+	{
+		return this.done;
+	}
+
+	public void setDone(boolean done)
+	{
+		this.done = done;
+	}
+
+	public void generate()
+	{
 		
 	}
 	
-	public EatType getEats(){
+	public EatType getEats()
+	{
 		
 	}
 	
-	public int getEatsLevel(){
+	public int getEatsLevel()
+	{
 		
 	}
 	
-	public int getHunger(){
+	public int getHunger()
+	{
 		
 	}
 	
-	public int getHealth(){
+	public int getHealth()
+	{
 		
 	}
 	
-	public int getSpeed(){
+	public int getSpeed()
+	{
 		
 	}
 	
-	public String getName(){
+	public String getName()
+	{
 		
 	}
 	
-	public String getDescription(){
+	public String getDescription()
+	{
 		
 	}
 	
-	public void setHunger(int hunger){
+	public void setHunger(int hunger)
+	{
 		
 	}
 	
-	public void changeHunger(int hunger){
+	public void changeHunger(int hunger)
+	{
+		this.hunger += hunger;
+		if(this.hunger > this.maxHunger)
+			this.hunger = this.maxHunger;
+		if(this.hunger < 0)
+			this.hunger = 0;
+	}
+	
+	public void setHealth(int health)
+	{
 		
 	}
 	
-	public void setHealth(int health){
-		
+	public void changeHealth(int health)
+	{
+		this.health += health;
+		if(this.health > this.maxHealth)
+			this.health = this.maxHealth;
+		if(this.health < 0)
+			this.health = 0;
+	}
+
+	public boolean dead()
+	{
+		return this.health <= 0;
 	}
 	
-	public void changeHealth(int health){
-		
-	}
-	
-	public int kill(){
+	public int kill()
+	{
 		//return its current health prior to kill as food for eater to add
+		int tempHealth = health;
+		health = 0;
+		return tempHealth;
 	}
 	
-	public int getMaxHealth(){
+	public int getMaxHealth()
+	{
 		
 	}
 	
-	public int getMaxHunger(){
+	public int getMaxHunger()
+	{
 		
 	}
 
