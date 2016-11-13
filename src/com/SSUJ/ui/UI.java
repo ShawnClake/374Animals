@@ -1,5 +1,6 @@
 package com.SSUJ.ui;
 
+import java.io.*;
 import java.util.Scanner;
 import java.util.List;
 import java.util.Arrays;
@@ -16,11 +17,11 @@ public class UI {
 	private System.out out;
 	
 	public Scanner getIn(){
-		return in;
+		return this.in;
 	}
 	
 	public System.out getOut(){
-		return out;
+		return this.out;
 	}
 	
 	public void instructions(){
@@ -33,7 +34,7 @@ public class UI {
 	}
 	
 	public void daysRemaining(){
-		
+		System.out.println("Days remaining: ");
 	}
 
 }

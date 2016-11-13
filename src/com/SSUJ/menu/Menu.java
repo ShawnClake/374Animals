@@ -11,7 +11,7 @@ import java.util.Scanner;
  *********************************************************************************/
 public class Menu {
 	
-	private Simulation simulation; //sim that will be run
+	private static Simulation simulation; //sim that will be run
 	
 	public static void main(String [] args)
 	{
@@ -51,6 +51,9 @@ public class Menu {
 	
 	public static void begin(){
 		simulation.initialize();
+		for(int i = 0; i <= simulation.getLength(); i++){
+			simulation.nextDay();
+		}
 	}
 	
 	public static void quit(){
