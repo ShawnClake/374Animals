@@ -50,6 +50,9 @@ public class Tile {
 			case 8: this.animal = new Squirrel(); break;
 			case 9: this.animal = new Wolf(); break;
 		}
+		
+		if(this.animal != null)
+			this.animal.generate();
 
 		switch(vegetationInt)
 		{
@@ -58,8 +61,11 @@ public class Tile {
 			case 2: this.vegetation = new Tree(); break;
 			case 3: this.vegetation = null; break;
 		}
+		
+		if(this.vegetation != null)
+			this.vegetation.generate();
 
-			this.exhaustionLevel = exhaustionInt;
+		this.exhaustionLevel = exhaustionInt;
 	
 	}
 	
