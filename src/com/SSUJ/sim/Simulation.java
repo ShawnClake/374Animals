@@ -54,6 +54,7 @@ public class Simulation {
 			ui.printWorld(world.getMap());			
 			//print out days remaining
 			ui.daysRemaining(length, world.getDay());
+			//give user option to skip to end or continue
 		}
 	}
 	

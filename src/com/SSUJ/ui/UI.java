@@ -29,7 +29,16 @@ public class UI {
 	
 	public void instructions(){
 		//how the simulation works in general
-		System.out.print(s);
+		System.out.print("This is a simulation of Saskatchewan wildlife. It takes a certain number of "
+		+"animals and vegetation and throw them into a real world simulation. The animals "
+		+"and vegetation are randomly generated in the world and behave randomly as well. "
+		+"Each animal is classified as either predator or prey, and each type of animal has "
+		+"different characteristics such as hunger, speed, and eating levels. When two animals"
+		+" end up in the same place, one sill eat the other. If and animal and some"
+		+" vegetation end up in the same area, the animal will go and eat the vegetation. At the beginning"
+		+ " you will be able to chose the size of the world you want these animals to live in as well as "
+		+ "how many days you want the simulation to run for. The simulation will then begin for the set number"
+		+ " of days specified.");
 	}
 	
 	public void printWorld(Tile[][] map){
@@ -44,13 +53,16 @@ public class UI {
 	
 	public char printTileSymbol(Tile t){
 		//* represents a plant, & is an animal, # plant & animal, blank is none
+		char symbol = ' ';
 		
+		
+		return symbol;
 	}
 	
 	public void printTile(Tile tile){
 		//animals
 		tile.getAnimal();
-		//print out values
+		
 		
 		//vegetation
 		tile.getVegetation();
