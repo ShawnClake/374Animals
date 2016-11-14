@@ -55,9 +55,29 @@ public class Menu {
 		Scanner in = new Scanner(System.in);
 		sim.getUI().instructions();
 		//get days and x and y sizes
-		System.out.println("Chose the number of days to run the simulation for (an integer value).");
+		System.out.println("Chose the number of days to run the simulation for (an integer value)");
 		int days = in.nextInt();
 		sim.setLength(days);
+		
+		//x and y sizes
+		System.out.println("Now we need to set the size of the grid the simulation will be ran on.");
+		System.out.println("NOTE: Max allowed size is 100x100.");
+		System.out.println("Enter value for x coordinate:");
+		int xcoor = in.nextInt();
+		while(xcoor > 100){
+			System.out.println("The x -coordinate can be no larger than 100.");
+			System.out.println("Please enter new value for x-coordinate length:");
+			xcoor = in.nextInt();
+		}
+		System.out.println("Enter value for y coordinate:");
+		int ycoor = in.nextInt();
+		while(ycoor > 100){
+			System.out.println("The y-coordinate can be no larger than 100.");
+			System.out.println("Please enter new value for y-coordinate length:");
+			ycoor = in.nextInt();
+		}
+		//NEED TO STILL DETERMINE X AND Y LENGTHS
+		
 		
 		//initialize the simulation
 		sim.initialize();
