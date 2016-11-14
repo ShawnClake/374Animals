@@ -56,6 +56,7 @@ public class Tile {
 			case 0: this.vegetation = new Grass(); break;
 			case 1: this.vegetation = new Shrub(); break;
 			case 2: this.vegetation = new Tree(); break;
+			case 3: this.vegetation = null; break;
 		}
 
 			this.exhaustionLevel = exhaustionInt;
