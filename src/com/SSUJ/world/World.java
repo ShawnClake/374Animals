@@ -72,7 +72,9 @@ public class World {
 					
 				genMap[n][m] = genTile;
 				/*The following print statements are used if Trevor wants to see the tile as it is generated*/
-				/*System.out.print("x: ");
+				/*
+				if(genTile.getAnimal()!= null){
+				System.out.print("x: ");
 				System.out.print(n);
 				System.out.print(" y: ");
 				System.out.println(m);
@@ -84,7 +86,9 @@ public class World {
 				System.out.println(genTile.getVegetation());
 				
 				System.out.print(" ExhuastionLevel: ");
-				System.out.println(genTile.getExhaustionLevel());*/
+				System.out.println(genTile.getExhaustionLevel());
+				}
+				*/
 
 			}
 		}
