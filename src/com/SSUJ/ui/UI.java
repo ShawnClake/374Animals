@@ -46,6 +46,7 @@ public class UI {
 		System.out.println("\t* represents vegeation");
 		System.out.println("\t& represents an animal");
 		System.out.println("\t# represents the presence of vegitation and an animal");
+		System.out.println("The numbers on the right and bottom represent tile numbers.");
 		//double loop to print out rest of map
 		int xx = 0;
 		int yy = 0;
@@ -59,7 +60,7 @@ public class UI {
 			System.out.print(yy);//row number
 			System.out.println("");
 		}
-		
+		//print out horizontal lines???
 		//print out line of column numbers
 		for(xx = 0; xx < x; xx++){
 			if(xx == 0){
@@ -72,7 +73,24 @@ public class UI {
 		}
 		
 		//give option to print out individual tile
-		
+		String print = "";
+		Scanner in = new Scanner(System.in);
+		System.out.println("Would you like to print out and individual tile's stats?(enter anything for yes and 'no' for no):");
+		print = in.nextLine();
+		print = print.toLowerCase();
+		while(!print.equals("no")){
+			int xval;
+			int yval;
+			System.out.println("Enter the x-coordinate: ");
+			xval = in.nextInt();
+			System.out.println("Enter the y-coordinate: ");
+			yval = in.nextInt();
+			printTile(map[xval][yval]);
+			System.out.println("Would you like to continue printing tiles? (enter no to stop): ");
+			print = in.nextLine();
+			print = print.toLowerCase();
+		}
+		in.close();
 	}
 	
 	public char printTileSymbol(Tile t){
