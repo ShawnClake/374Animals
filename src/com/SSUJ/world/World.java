@@ -22,35 +22,20 @@ public class World {
 	private int y; // Size of map in y dir
 	private Tile[][] map; // The map array is formatted like: Tile[y][x] WHERE top left corner is 0,0
 	private int day;
-	/**
-	 * Random number generator is used to set animal, vegetation, exhaustion level
-	 */
-	Random rn = new Random();
-	int maxExhaustionLevel = 1;
-	int minExhaustionLevel = 0;
-	int rangeExhaustionLevel = maxExhaustionLevel - minExhaustionLevel + 1;
-	int maxAnimal = 1100; //1% of 10,000 tiles
-	int minAnimal = 0;
-	int rangeAnimal = maxAnimal - minAnimal + 1;
-	int maxVegetation = 2;
-	int minVegetation = 0;
-	int rangeVegetation = maxVegetation - minVegetation + 1;	
-	
-	
-	public World(int l, int l2) {
-		// Used to create grid
-		map = new Tile[l][l2];
-		
-	}
 
 	public void generate(int x, int y)
 	{
 		this.x = x;
 		this.y = y;
 		this.day = 0;
+		
+			/**
+		 * Random number generator is used to set animal, vegetation, exhaustion level
+		 */
+		Random rn = new Random();		
 		//Tile[][] mapp = new Tile[x][y];
 
-		for(int n=0;n<x;n++){
+		for(int n=0;n<y;n++){
 			
 			/*alternative method of printing to console while generating map
 			if((n % 500)==0){
@@ -58,19 +43,28 @@ public class World {
 				System.out.println(n);
 			}*/
 			
-			for(int m=0;m<y;m++){
+			for(int m=0;m<x;m++){
 				
 
 				
-				int randomExhaustion = ((rn.nextInt(65536)) % rangeExhaustionLevel);
-				int randomAnimal = ((rn.nextInt(65536)) % rangeAnimal);
-				int randomVegetation = ((rn.nextInt(65536)) % rangeVegetation);
+				int randomExhaustion = rn.nextInt(2);
+				
+				int animalChance = rn.nextInt(5);
+				int vegetationChance = rn.nextInt(4);
+				int randomAnimal = 10
+				int randomVegetation = 3;
+					
+				if(animalChance == 1)
+					 randomAnimal = rn.nextInt(10);
+
+				if(animalChance == 1)	
+					randomVegetation = rn.nextInt(3);
+					
 				//sim.initialize();
-				Tile[][] genMap = getMap();
 				Tile genTile = new Tile();
 				genTile.generate(randomAnimal,randomVegetation,randomExhaustion);
 					
-				genMap[n][m] = genTile;
+				this.map[n][m] = genTile;
 				/*The following print statements are used if Trevor wants to see the tile as it is generated*/
 				/*
 				if(genTile.getAnimal()!= null){
