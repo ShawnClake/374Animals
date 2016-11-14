@@ -21,17 +21,17 @@ public class Vegetation {
 	
 	public int getFoodLevel()
 	{
-		
+		return this.foodLevel;
 	}
 	
 	public String getName()
 	{
-		
+		return this.name;
 	}
 	
 	public String getDescription()
 	{
-		
+		return this.description;
 	}
 	
 	public int eat()
@@ -44,7 +44,7 @@ public class Vegetation {
 	
 	public int getMaxFoodLevel()
 	{
-		
+		return this.maxFoodLevel;
 	}
 
 }
