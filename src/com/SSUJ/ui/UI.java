@@ -37,6 +37,8 @@ public class UI {
 		//* represents a plant, & is an animal, # plant & animal, use print tile symbol to determine these
 
 		//print out line of column numbers
+		
+		//give option to print out individual tile
 	}
 	
 	public void printTileSymbol(){

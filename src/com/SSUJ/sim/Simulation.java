@@ -2,7 +2,6 @@ package com.SSUJ.sim;
 
 import com.SSUJ.ui.UI;
 import com.SSUJ.world.World;
-import java.util.Scanner;
 /*****************************************************************************************************
  * Simulation
  * 
@@ -49,8 +48,7 @@ public class Simulation {
 	public void simulate(){
 		//loop through days
 		for(int i = 0; i <= this.length; i++){
-			//call next day
-			//print out log
+			//call next day & print out log
 			nextDay();
 			//print out world
 			ui.printWorld(world.getMap());			
