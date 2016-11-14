@@ -42,6 +42,7 @@ public class UI {
 	}
 	
 	public void printWorld(Tile[][] map){
+		//legend for map
 		//double loop to print out rest of map
 		//print row number, then tiles
 		
@@ -54,18 +55,43 @@ public class UI {
 	public char printTileSymbol(Tile t){
 		//* represents a plant, & is an animal, # plant & animal, blank is none
 		char symbol = ' ';
-		
+		if(t.getAnimal() != null && t.getVegetation() != null){
+			symbol = '#';
+		}
+		else if(t.getAnimal() != null){
+			symbol = '&';
+		}
+		else if(t.getVegetation() != null){
+			symbol = '*';
+		}
 		
 		return symbol;
 	}
 	
 	public void printTile(Tile tile){
-		//animals
-		tile.getAnimal();
+		//animals: name, description, eatType, eatslevel, hunger/max, health/max, speed
+		if(tile.getAnimal() != null){
+			System.out.println("Animal name: " + tile.getAnimal().getName());
+			System.out.println("Description: " + tile.getAnimal().getDescription());
+			System.out.println("Type: "+ tile.getAnimal().getEats());
+			System.out.println("Eating Level: " + tile.getAnimal().getEatsLevel());
+			System.out.println("Hunger: " + tile.getAnimal().getHunger() + "/" + tile.getAnimal().getMaxHunger());
+			System.out.println("Health: " + tile.getAnimal().getHealth() + "/" + tile.getAnimal().getMaxHealth());
+			System.out.println("Speed: " + tile.getAnimal().getSpeed());
+		}
+		else{
+			System.out.println("No animal on tile.");
+		}
 		
-		
-		//vegetation
-		tile.getVegetation();
+		//vegetation: name, description, foodlevel/max
+		if(tile.getVegetation() != null){
+			System.out.println("Veg. Name: " + tile.getVegetation().getName());
+			System.out.println("Description: " + tile.getVegetation().getDescription());
+			System.out.println("Food Level: " + tile.getVegetation().getFoodLevel() + "/" + tile.getVegetation().getMaxFoodLevel());
+		}
+		else{
+			System.out.println("No vegetation present on tile.");
+		}
 	}
 	
 	public void log(List<String> dayEvents){
