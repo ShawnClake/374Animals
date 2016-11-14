@@ -15,6 +15,14 @@ public class Simulation {
 	private int length;
 	private UI ui;
 	
+	public Simulation(int i) {
+		// TODO Auto-generated constructor stub
+		this.length =i;
+		
+		world = new World(i,i);
+
+	}
+
 	public World getWorld()
 	{
 		return world;
@@ -31,19 +39,13 @@ public class Simulation {
 		return length;
 	}
 	
-	public void initialize()
+	public void initialize(int length)
 	{
-		
-		World wor = new World();
-		/**
-		 * Calls generate from world for as many tiles as are needed, default is 25 
-		 */
-		if(length>0){ 
-		wor.generate(length,length);
+		if (length>this.length){
+			return;
 		}
-		else {
-			wor.generate(25,25);			
-		}
+
+		world.generate(length,length);			
 
 		
 	}

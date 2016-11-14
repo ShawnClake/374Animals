@@ -14,8 +14,11 @@ public class Menu {
 	
 	public static void main(String [] args)
 	{
-		Simulation sim = new Simulation();
-		sim.initialize();
+		
+		Simulation sim = new Simulation(100);
+		sim.initialize(100);
+		System.out.print("done");
+
 	}
 	
 	public void begin(){

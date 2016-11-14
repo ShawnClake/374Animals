@@ -33,72 +33,56 @@ public class Tile {
 	
 	public void generate(int animalInt, int vegetationInt, int exhaustionInt)
 	{
-		Animal animalChoice = null;
-		Vegetation vegetationChoice = null;
 
 		//Animal selector
-			if(animalInt <= 11){
-				animalChoice = null;	
+			if(animalInt >= 10){
+				animal = null;	
 			}
-			else if(animalInt==12){
-				Bluejay choice = null;
-				animalChoice = choice;				
+			else if(animalInt==0){
+				animal = new Bluejay();
 			}
-			else if(animalInt==13){
-				Caterpillar choice = null;
-				animalChoice = choice;	
+			else if(animalInt==1){
+				animal = new Caterpillar();
 			}
-			else if(animalInt==14){
-				Deer choice = null;
-				animalChoice = choice;	
+			else if(animalInt==2){
+				animal = new Deer();
 			}
-			else if(animalInt==15){
-				Fox choice = null;
-				animalChoice = choice;	
+			else if(animalInt==3){
+				animal = new Fox();
 			}
-			else if(animalInt==16){
-				Grasshoper choice = null;
-				animalChoice = choice;	
+			else if(animalInt==4){
+				animal = new Grasshoper();	
 			}
-			else if(animalInt==17){
-				Hawk choice = null;
-				animalChoice = choice;	
+			else if(animalInt==5){
+				animal = new Hawk();
 			}
-			else if(animalInt==18){
-				Mouse choice = null;
-				animalChoice = choice;	
+			else if(animalInt==6){
+				animal = new Mouse();
 			}
-			else if(animalInt==19){
-				Rabbit choice = null;
-				animalChoice = choice;	
+			else if(animalInt==7){
+				animal = new Rabbit();
 			}
-			else if(animalInt==20){
-				Squirrel choice = null;
-				animalChoice = choice;	
+			else if(animalInt==8){
+				animal = new Squirrel();
 			}
-			else if(animalInt==21){
-				Wolf choice = null;
-				animalChoice = choice;	
+			else if(animalInt==9){
+				animal = new Wolf();	
 			}
 			//Vegetation Selector
 			if(vegetationInt == 0){
-				Grass choice = null;
-				vegetationChoice = choice;	
+				vegetation = new Grass();
+
 			}
 			else if(vegetationInt==1){
-				Shrub choice = null;
-				vegetationChoice = choice;	
+				vegetation = new Shrub();
+
 			}
 			else if(vegetationInt==2){
-				Tree choice = null;
-				vegetationChoice = choice;	
+				vegetation = new Tree();
 			}
 			
-			
-			//Set all values for the tile
-			this.setAnimal(animalChoice);
-			this.setVegetation(vegetationChoice);
-			this.setExhaustionLevel(exhaustionInt);			
+			exhaustionLevel = exhaustionInt;
+	
 	}
 	
 	public Animal getAnimal()

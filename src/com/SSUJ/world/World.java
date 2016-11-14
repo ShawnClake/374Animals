@@ -26,10 +26,10 @@ public class World {
 	 * Random number generator is used to set animal, vegetation, exhaustion level
 	 */
 	Random rn = new Random();
-	int maxExhaustionLevel = 10;
+	int maxExhaustionLevel = 1;
 	int minExhaustionLevel = 0;
 	int rangeExhaustionLevel = maxExhaustionLevel - minExhaustionLevel + 1;
-	int maxAnimal = 21;
+	int maxAnimal = 1100; //1% of 10,000 tiles
 	int minAnimal = 0;
 	int rangeAnimal = maxAnimal - minAnimal + 1;
 	int maxVegetation = 2;
@@ -37,27 +37,55 @@ public class World {
 	int rangeVegetation = maxVegetation - minVegetation + 1;	
 	
 	
+	public World(int l, int l2) {
+		// Used to create grid
+		map = new Tile[l][l2];
+		
+	}
+
 	public void generate(int x, int y)
 	{
 		this.x = x;
 		this.y = y;
 		this.day = 0;
-		Tile[][] mapp = new Tile[x][y];
+		//Tile[][] mapp = new Tile[x][y];
 
 		for(int n=0;n<x;n++){
 			
+			/*alternative method of printing to console while generating map
+			if((n % 500)==0){
+				System.out.print("x: ");
+				System.out.println(n);
+			}*/
+			
 			for(int m=0;m<y;m++){
+				
+
 				
 				int randomExhaustion = ((rn.nextInt(65536)) % rangeExhaustionLevel);
 				int randomAnimal = ((rn.nextInt(65536)) % rangeAnimal);
 				int randomVegetation = ((rn.nextInt(65536)) % rangeVegetation);
-				
 				//sim.initialize();
-				Tile gen = new Tile();
-				gen.generate(randomAnimal,randomVegetation,randomExhaustion);
+				Tile[][] genMap = getMap();
+				Tile genTile = new Tile();
+				genTile.generate(randomAnimal,randomVegetation,randomExhaustion);
+					
+				genMap[n][m] = genTile;
+				/*The following print statements are used if Trevor wants to see the tile as it is generated*/
+				/*System.out.print("x: ");
+				System.out.print(n);
+				System.out.print(" y: ");
+				System.out.println(m);
 				
-				mapp[n][m] = gen;
+				System.out.print(" Animal: ");
+				System.out.println(genTile.getAnimal());
 				
+				System.out.print(" Vegetation: ");
+				System.out.println(genTile.getVegetation());
+				
+				System.out.print(" ExhuastionLevel: ");
+				System.out.println(genTile.getExhaustionLevel());*/
+
 			}
 		}
 		
@@ -213,7 +241,12 @@ public class World {
 	
 	public Tile getTile(int x, int y)
 	{
-		return this.map[y][x];
+		return this.map[x][y];
+	}
+	
+	public Tile[][] getMap()
+	{
+		return this.map;
 	}
 	
 	public int killAnimal(int x, int y)
