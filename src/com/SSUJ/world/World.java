@@ -114,8 +114,7 @@ public class World {
 					Animal animal = tile.getAnimal();
 					Vegetation vegetation = tile.getVegetation();
 
-					int exhaustion = tile.getExhaustionLevel();
-					int speed = animal.getSpeed() - exhaustion;
+					int speed = animal.getSpeed();
 
 					// Handle hunger drop for the movement
 					animal.changeHunger(speed * -1);
@@ -123,9 +122,10 @@ public class World {
 					int i = 0; // Overall Change in X direction
 					int j = 0; // Overall Change in Y direction
 
-					for(int k = 0; k < speed; k++)
+					while(speed > 0)
 					{
 						int direction = rand.nextInt(4) + 1; //1 is up, 2 is right, 3 is down, 4 is left
+
 						switch (direction)
 						{
 							case 1: j--; break;
@@ -133,6 +133,13 @@ public class World {
 							case 3: j++; break;
 							case 4: i--; break;
 						}
+
+						Tile moveTile = getTile(m + j, n + i);
+						int exhaustion = moveTile.getExhaustionLevel();
+
+						speed -= exhaustion;
+						speed -= 1;
+
 					}
 
 					int m2 = m + j; // Coords of the destination tile in Y direction
@@ -148,75 +155,103 @@ public class World {
 					if(n2 >= this.x)
 						n2 = this.x - 1;
 
-					events.add(animal.getName() + " at (" + n + "," + m + ") moved to (" + n2 + "," + m2 + ").");
+					if(n2 == n && m2 == m)
+					{
 
-					Tile tile2 = getTile(n2, m2);
-					Animal animal2 = tile2.getAnimal();
-					Vegetation vegetation2 = tile2.getVegetation();
+						events.add(animal.getName() + " didn't move.");
 
-					boolean killed = false;
+						// Drop animal health if its hungry
+						if(animal.getHunger() <= 0)
+						{
+							int dmg = (int)(Math.ceil((double)animal.getMaxHealth() * 0.05));
+							animal.changeHealth(dmg);
 
-					// Collision will happen
-					if(animal2 != null)
-					{ // Animal on Animal collision
+							if(animal.dead())
+							{
+								tile.setAnimal(null);
+								events.add(animal.getName() + " died by starvation.");
+							}
+							else
+							{
+								events.add(animal.getName() + " is slowly starving to death.");
+							}
+						}
 
-						// Generating the overall eat level by taking into account predator vs prey
-						int eatLevel = animal.getEatsLevel();
-						if(animal.getEats() == EatType.PREDATOR)
-							eatLevel += 1000;
+					}
+					else
+					{
 
-						int eatLevel2 = animal2.getEatsLevel();
-						if(animal2.getEats() == EatType.PREDATOR)
-							eatLevel2 += 1000;
+						events.add(animal.getName() + " at (" + n + "," + m + ") moved to (" + n2 + "," + m2 + ").");
 
-						if(eatLevel >= eatLevel2)
-						{ // Animal eats the animal on the new tile
-							animal.changeHunger(animal2.kill());
+						Tile tile2 = getTile(n2, m2);
+						Animal animal2 = tile2.getAnimal();
+						Vegetation vegetation2 = tile2.getVegetation();
+
+						boolean killed = false;
+
+						// Collision will happen
+						if(animal2 != null)
+						{ // Animal on Animal collision
+
+							// Generating the overall eat level by taking into account predator vs prey
+							int eatLevel = animal.getEatsLevel();
+							if(animal.getEats() == EatType.PREDATOR)
+								eatLevel += 1000;
+
+							int eatLevel2 = animal2.getEatsLevel();
+							if(animal2.getEats() == EatType.PREDATOR)
+								eatLevel2 += 1000;
+
+							if(eatLevel >= eatLevel2)
+							{ // Animal eats the animal on the new tile
+								animal.changeHunger(animal2.kill());
+								tile2.setAnimal(animal);
+								tile.setAnimal(null);
+
+								events.add(animal.getName() + " encountered a " + animal2.getName() + " and killed it.");
+							}
+							else
+							{ // Animal is eaten by the animal on the new tile
+								animal2.changeHunger(animal.kill());
+								tile.setAnimal(null);
+								killed = true;
+
+								events.add(animal.getName() + " encountered a " + animal2.getName() + " and was killed by it.");
+							}
+
+						} else if(vegetation2 != null) {
+							// Animal on plant collision.
 							tile2.setAnimal(animal);
 							tile.setAnimal(null);
 
-							events.add(animal.getName() + " encountered a " + animal2.getName() + " and killed it.");
-						}
-						else
-						{ // Animal is eaten by the animal on the new tile
-							animal2.changeHunger(animal.kill());
+							tile2.getAnimal().changeHunger(vegetation2.eat());
+							tile2.setVegetation(null);
+
+							events.add(animal.getName() + " found " + vegetation2.getName() + " and ate it.");
+
+						} else {
+							// Simple animal movement
+							tile2.setAnimal(animal);
 							tile.setAnimal(null);
-							killed = true;
-
-							events.add(animal.getName() + " encountered a " + animal2.getName() + " and was killed by it.");
 						}
 
-					} else if(vegetation2 != null) {
-						// Animal on plant collision.
-						tile2.setAnimal(animal);
-						tile.setAnimal(null);
-
-						tile2.getAnimal().changeHunger(vegetation2.eat());
-						tile2.setVegetation(null);
-
-						events.add(animal.getName() + " found " + vegetation2.getName() + " and ate it.");
-
-					} else {
-						// Simple animal movement
-						tile2.setAnimal(animal);
-						tile.setAnimal(null);
-					}
-
-					// Drop animal health if its hungry
-					if(!killed)
-					{
-						int dmg = (int)(Math.ceil((double)animal.getMaxHealth() * 0.05));
-						animal.changeHealth(dmg);
-
-						if(animal.dead())
+						// Drop animal health if its hungry
+						if(!killed && animal.getHunger() <= 0)
 						{
-							tile2.setAnimal(null);
-							events.add(animal.getName() + " died by starvation.");
+							int dmg = (int)(Math.ceil((double)animal.getMaxHealth() * 0.05));
+							animal.changeHealth(dmg);
+
+							if(animal.dead())
+							{
+								tile2.setAnimal(null);
+								events.add(animal.getName() + " died by starvation.");
+							}
+							else
+							{
+								events.add(animal.getName() + " is slowly starving to death.");
+							}
 						}
-						else
-						{
-							events.add(animal.getName() + " is slowly starving to death.");
-						}
+
 					}
 
 					// Marking the animal as having moved already this day

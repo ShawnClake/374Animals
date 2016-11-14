@@ -35,53 +35,30 @@ public class Tile {
 	{
 
 		//Animal selector
-			if(animalInt >= 10){
-				animal = null;	
-			}
-			else if(animalInt==0){
-				animal = new Bluejay();
-			}
-			else if(animalInt==1){
-				animal = new Caterpillar();
-			}
-			else if(animalInt==2){
-				animal = new Deer();
-			}
-			else if(animalInt==3){
-				animal = new Fox();
-			}
-			else if(animalInt==4){
-				animal = new Grasshoper();	
-			}
-			else if(animalInt==5){
-				animal = new Hawk();
-			}
-			else if(animalInt==6){
-				animal = new Mouse();
-			}
-			else if(animalInt==7){
-				animal = new Rabbit();
-			}
-			else if(animalInt==8){
-				animal = new Squirrel();
-			}
-			else if(animalInt==9){
-				animal = new Wolf();	
-			}
-			//Vegetation Selector
-			if(vegetationInt == 0){
-				vegetation = new Grass();
 
-			}
-			else if(vegetationInt==1){
-				vegetation = new Shrub();
+		switch(animalInt)
+		{
+			case 10: this.animal = null; break; // Not sure why we need this one?
+			case 0: this.animal = new Bluejay(); break;
+			case 1: this.animal = new Caterpillar(); break;
+			case 2: this.animal = new Deer(); break;
+			case 3: this.animal = new Fox(); break;
+			case 4: this.animal = new Grasshoper(); break;
+			case 5: this.animal = new Hawk(); break;
+			case 6: this.animal = new Mouse(); break;
+			case 7: this.animal = new Rabbit(); break;
+			case 8: this.animal = new Squirrel(); break;
+			case 9: this.animal = new Wolf(); break;
+		}
 
-			}
-			else if(vegetationInt==2){
-				vegetation = new Tree();
-			}
-			
-			exhaustionLevel = exhaustionInt;
+		switch(vegetationInt)
+		{
+			case 0: this.vegetation = new Grass(); break;
+			case 1: this.vegetation = new Shrub(); break;
+			case 2: this.vegetation = new Tree(); break;
+		}
+
+			this.exhaustionLevel = exhaustionInt;
 	
 	}
 	
