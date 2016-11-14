@@ -14,14 +14,6 @@ public class Simulation {
 	private World world;//world sim will be ran in
 	private int length;
 	private UI ui;
-	
-	public Simulation(int i) {
-		// TODO Auto-generated constructor stub
-		this.length =i;
-		
-		world = new World(i,i);
-
-	}
 
 	public World getWorld()
 	{
@@ -39,15 +31,9 @@ public class Simulation {
 		return length;
 	}
 	
-	public void initialize(int length)
+	public void initialize()
 	{
-		if (length>this.length){
-			return;
-		}
-
-		world.generate(length,length);			
-
-		
+		world.generate();			
 	}
 	
 	public UI getUI()
