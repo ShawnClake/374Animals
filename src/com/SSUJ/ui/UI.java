@@ -1,12 +1,11 @@
 package com.SSUJ.ui;
 
-import java.io.*;
+
 import java.util.Scanner;
 
 import com.SSUJ.tile.Tile;
 
 import java.util.List;
-import java.util.Arrays;
 /*******************************************************************************
  * UI
  * 
@@ -41,15 +40,39 @@ public class UI {
 		+ " of days specified.");
 	}
 	
-	public void printWorld(Tile[][] map){
+	public void printWorld(Tile[][] map, int x, int y){
 		//legend for map
+		System.out.println("Tile Legend:");
+		System.out.println("\t* represents vegeation");
+		System.out.println("\t& represents an animal");
+		System.out.println("\t# represents the presence of vegitation and an animal");
 		//double loop to print out rest of map
-		//print row number, then tiles
+		int xx = 0;
+		int yy = 0;
+		for(yy = 0; yy < y; yy++){
+			for(xx = 0; xx < x; xx++){
+				if(xx == 0){
+					System.out.print("|");
+				}
+				System.out.print(printTileSymbol(map[xx][yy]) + "|");
+			}
+			System.out.print(yy);//row number
+			System.out.println("");
+		}
 		
-
 		//print out line of column numbers
+		for(xx = 0; xx < x; xx++){
+			if(xx == 0){
+				System.out.print(" ");
+			}
+			if(xx < 10){
+				System.out.print(" ");
+			}
+			System.out.print(xx +" ");
+		}
 		
 		//give option to print out individual tile
+		
 	}
 	
 	public char printTileSymbol(Tile t){
@@ -97,12 +120,14 @@ public class UI {
 	public void log(List<String> dayEvents){
 		//printing out the days events
 		//may need a loop instead
-		System.out.println(Arrays.toString(dayEvents.toArray()));
+		for(int i = 0; i < dayEvents.size(); i++){
+			System.out.println(dayEvents.get(i));
+		}
 	}
 	
 	public void daysRemaining(int days, int day){
 		int remaining = days - day;
-		System.out.println("Days remaining: " + remaining + ".");
+		System.out.println("Days remaining: " + remaining);
 	}
 
 }

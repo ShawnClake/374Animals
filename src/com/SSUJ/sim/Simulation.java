@@ -55,7 +55,7 @@ public class Simulation {
 			nextDay();
 			//print out world
 			if(cont){
-				ui.printWorld(world.getMap());	
+				ui.printWorld(world.getMap(), world.getX(), world.getY());	
 			//print out days remaining
 				ui.daysRemaining(length, world.getDay());
 			}
