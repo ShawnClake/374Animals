@@ -55,8 +55,12 @@ public class Menu {
 		Scanner in = new Scanner(System.in);
 		sim.getUI().instructions();
 		//get days and x and y sizes
-		System.out.println("Chose the number of days to run the simulation for (an integer value)");
-		int days = in.nextInt();
+		System.out.println("Chose the number of days to run the simulation for (an integer value with a max of 60)");
+		int days = in.nextInt();//max length
+		while(days > 60 || days < 1){
+			System.out.println("Please enter correct value from 1 to 60:");
+			days = in.nextInt();
+		}
 		sim.setLength(days);
 		
 		//x and y sizes
@@ -76,7 +80,9 @@ public class Menu {
 			System.out.println("Please enter new value for y-coordinate length:");
 			ycoor = in.nextInt();
 		}
-		//NEED TO STILL DETERMINE X AND Y LENGTHS
+		//set x and y lengths
+		sim.getWorld().setX(xcoor);
+		sim.getWorld().setY(ycoor);
 		
 		
 		//initialize the simulation

@@ -38,6 +38,22 @@ public class World {
 		return this.map;
 	}
 	
+	public void setX(int x){
+		this.x = x;
+	}
+	
+	public void setY(int y){
+		this.y = y;
+	}
+	
+	public int getY(){
+		return this.y;
+	}
+	
+	public int getX(){
+		return this.x;
+	}
+	
 	public List<String> nextDay()
 	{
 		List<String> events = new ArrayList<>();
