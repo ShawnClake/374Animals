@@ -15,29 +15,44 @@ public class Simulation {
 	private int length;
 	private UI ui;
 	
+	public Simulation(int i) {
+		// TODO Auto-generated constructor stub
+		this.length =i;
+		
+		world = new World(i,i);
+
+	}
+
 	public World getWorld()
 	{
-		
+		return world;
 	}
 	
 	public int getLength()
 	{
-		
+		return length;
 	}
 	
-	public int setLength()
+	public int setLength(int l)
 	{
-		
+		this.length = l;
+		return length;
 	}
 	
-	public void initialize()
+	public void initialize(int length)
 	{
+		if (length>this.length){
+			return;
+		}
+
+		world.generate(length,length);			
+
 		
 	}
 	
 	public UI getUI()
 	{
-		
+		return ui;
 	}
 	
 	public void nextDay()
