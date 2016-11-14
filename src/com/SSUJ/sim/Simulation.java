@@ -2,6 +2,7 @@ package com.SSUJ.sim;
 
 import com.SSUJ.ui.UI;
 import com.SSUJ.world.World;
+import java.util.Scanner;
 /*****************************************************************************************************
  * Simulation
  * 
@@ -52,7 +53,7 @@ public class Simulation {
 			//print out log
 			nextDay();
 			//print out world
-			ui.printWorld();
+			ui.printWorld(world.getMap());			
 			//print out days remaining
 			ui.daysRemaining(length, world.getDay());
 		}

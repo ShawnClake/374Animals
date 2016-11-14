@@ -52,13 +52,19 @@ public class Menu {
 	}
 	
 	public static void begin(Simulation sim){
+		Scanner in = new Scanner(System.in);
 		sim.getUI().instructions();
 		//get days and x and y sizes
+		System.out.println("Chose the number of days to run the simulation for (an integer value).");
+		int days = in.nextInt();
+		sim.setLength(days);
 		
 		//initialize the simulation
 		sim.initialize();
 		//run the simulation
 		sim.simulate();
+		
+		in.close();
 	}
 	
 	public static void quit(){

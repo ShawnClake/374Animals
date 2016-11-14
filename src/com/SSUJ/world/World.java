@@ -30,6 +30,14 @@ public class World {
 		this.day = 0;
 	}
 	
+	public int getDay(){
+		return this.day;
+	}
+	
+	public Tile[][] getMap(){
+		return this.map;
+	}
+	
 	public List<String> nextDay()
 	{
 		List<String> events = new ArrayList<>();

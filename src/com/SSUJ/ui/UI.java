@@ -31,12 +31,12 @@ public class UI {
 		//how the simulation works in general
 	}
 	
-	public void printWorld(World world){//send world variable so we can use map
-		printTileSymbol(world.map);
-		//print out line of column numbers
+	public void printWorld(Tile[][] map){
 		//double loop to print out rest of map
 		//print row number, then tiles
 		//* represents a plant, & is an animal, # plant & animal, use print tile symbol to determine these
+
+		//print out line of column numbers
 	}
 	
 	public void printTileSymbol(){
