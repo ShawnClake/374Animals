@@ -153,6 +153,19 @@ public class World {
 							case 3: j++; break;
 							case 4: i--; break;
 						}
+						
+						if(m+j > this.y-1){
+							j--;
+						}
+						if(m + j < 0){
+							j++;
+						}
+						if(n+i < 0){
+							i++;
+						}
+						if(n + i > this.x - 1){
+							i--;
+						}
 
 						Tile moveTile = getTile(m + j, n + i);
 						int exhaustion = moveTile.getExhaustionLevel();
