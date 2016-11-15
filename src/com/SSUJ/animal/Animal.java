@@ -46,43 +46,41 @@ public class Animal {
 	
 	public EatType getEats()
 	{
-		return this.eats;
+	return eats;	
 	}
 	
 	public int getEatsLevel()
 	{
-		return this.eatsLevel;
+		return eatsLevel;
 	}
 	
 	public int getHunger()
 	{
-		return this.hunger;
+		return hunger;
 	}
 	
 	public int getHealth()
 	{
-		return this.health;
+		return health;
 	}
 	
 	public int getSpeed()
 	{
-		return this.speed;
+		return speed;
 	}
 	
 	public String getName()
 	{
-		return this.name;
+		return name;
 	}
 	
 	public String getDescription()
 	{
-		return this.description;
+		return description;
 	}
 	
 	public void setHunger(int hunger)
 	{
-		if(hunger > this.maxHunger)
-			this.hunger = this.maxHunger;
 		this.hunger = hunger;
 	}
 	
@@ -97,8 +95,6 @@ public class Animal {
 	
 	public void setHealth(int health)
 	{
-		if(health > this.maxHealth)
-			this.health = this.maxHealth;
 		this.health = health;
 	}
 	
@@ -126,12 +122,12 @@ public class Animal {
 	
 	public int getMaxHealth()
 	{
-		return this.maxHealth;
+		return maxHealth;
 	}
 	
 	public int getMaxHunger()
 	{
-		return this.maxHunger;
+		return maxHunger;
 	}
 
 }
