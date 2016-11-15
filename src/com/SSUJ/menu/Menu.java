@@ -32,7 +32,7 @@ public class Menu {
 			choice = in.nextLine();
 			
 			choice = choice.toLowerCase();
-			while(choice != "begin" || choice != "quit" || choice != "about"){
+			while(!choice.equals("begin") && !choice.equals("quit") && !choice.equals("about")){
 				System.out.println("That was not a correct choice.");
 				System.out.println("Please enter either 'begin', 'quit', or 'about'");
 				choice = in.nextLine(); 
@@ -105,7 +105,9 @@ public class Menu {
 		System.out.println("2016 - SSUJ ");
 		System.out.println("Authors: Shawn Clake, Jennifer Herasymuik, Sam Dietrich, Uys Kriek");
 		System.out.println("");
-		System.out.print("Animals was created by SSUJ for the Sask Wildlife federation. ");
+		System.out.println("Animals was created by SSUJ for the Sask Wildlife federation. ");
+		System.out.println("");
+		System.out.println("");
 		
 	}
 

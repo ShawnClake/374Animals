@@ -16,6 +16,11 @@ public class Simulation {
 	private int length;
 	private UI ui;
 
+	public Simulation(){
+		ui = new UI();
+		world = new World();
+	}
+	
 	public World getWorld()
 	{
 		return this.world;
@@ -38,7 +43,7 @@ public class Simulation {
 	
 	public UI getUI()
 	{
-		return ui;
+		return this.ui;
 	}
 	
 	public void nextDay()

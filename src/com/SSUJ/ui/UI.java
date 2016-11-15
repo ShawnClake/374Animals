@@ -28,16 +28,17 @@ public class UI {
 	
 	public void instructions(){
 		//how the simulation works in general
-		System.out.print("This is a simulation of Saskatchewan wildlife. It takes a certain number of "
-		+"animals and vegetation and throw them into a real world simulation. The animals "
-		+"and vegetation are randomly generated in the world and behave randomly as well. "
-		+"Each animal is classified as either predator or prey, and each type of animal has "
-		+"different characteristics such as hunger, speed, and eating levels. When two animals"
-		+" end up in the same place, one sill eat the other. If and animal and some"
-		+" vegetation end up in the same area, the animal will go and eat the vegetation. At the beginning"
-		+ " you will be able to chose the size of the world you want these animals to live in as well as "
-		+ "how many days you want the simulation to run for. The simulation will then begin for the set number"
-		+ " of days specified.");
+		System.out.println("This is a simulation of Saskatchewan wildlife. It takes a certain number of ");
+		System.out.println("animals and vegetation and throw them into a real world simulation. The animals ");
+		System.out.println("and vegetation are randomly generated in the world and behave randomly as well. ");
+		System.out.println("Each animal is classified as either predator or prey, and each type of animal has ");
+		System.out.println("different characteristics such as hunger, speed, and eating levels. When two animals");
+		System.out.println(" end up in the same place, one sill eat the other. If and animal and some");
+		System.out.println(" vegetation end up in the same area, the animal will go and eat the vegetation. At the beginning");
+		System.out.println( " you will be able to chose the size of the world you want these animals to live in as well as ");
+		System.out.println( "how many days you want the simulation to run for. The simulation will then begin for the set number");
+		System.out.println( " of days specified.");
+		System.out.println("");
 	}
 	
 	public void printWorld(Tile[][] map, int x, int y){
