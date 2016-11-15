@@ -76,7 +76,7 @@ public class Simulation {
 			}
 			
 			if(daysToSkip == 0){//only print this if not skipping days
-				
+				System.out.println("");
 				//no matter what log will print
 				System.out.println("You may now deside how to continue the simulation.");
 				System.out.println("Chose from the following options:");
