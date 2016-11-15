@@ -178,7 +178,7 @@ public class World {
 					if(n2 == n && m2 == m)
 					{
 
-						events.add(animal.getName() + " didn't move.");
+						events.add(animal.getName() + "(" + n + ", " + m + ") didn't move.");
 
 						// Drop animal health if its hungry
 						if(animal.getHunger() <= 0)
