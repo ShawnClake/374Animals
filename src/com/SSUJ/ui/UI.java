@@ -55,7 +55,7 @@ public class UI {
 				if(xx == 0){
 					System.out.print("|");
 				}
-				System.out.print(printTileSymbol(map[xx][yy]) + "|");
+				System.out.print(printTileSymbol(map[yy][xx]) + "|");
 			}
 			System.out.print(yy);//row number
 			System.out.println("");
