@@ -1,5 +1,7 @@
 package com.SSUJ.animal;
 
+import java.util.Random;
+
 public class Caterpillar extends Animal {
 
 	

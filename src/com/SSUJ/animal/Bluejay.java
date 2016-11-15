@@ -1,5 +1,7 @@
 package com.SSUJ.animal;
 
+import java.util.Random;
+
 public class Bluejay extends Animal {
 
 	

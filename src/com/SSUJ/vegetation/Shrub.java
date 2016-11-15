@@ -6,7 +6,7 @@ public class Shrub extends Vegetation {
 
 public void generate()
 	{
-			foodLevel = 20
+			foodLevel = 20;
 			maxFoodLevel = 40;
 			name = "Shrub";
 			description = "Shrub: is eaten by herbivores";

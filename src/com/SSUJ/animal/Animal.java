@@ -18,16 +18,16 @@ package com.SSUJ.animal;
 
 public class Animal {
 	
-	private EatType eats;
-	private int eatsLevel;
-	private int hunger;
-	private int health;
-	private int speed;
-	private int maxHealth;
-	private int maxHunger;
-	private String name;
-	private String description;
-	private boolean done; // Whether or not the animal is done for the day or not
+	protected EatType eats;
+	protected int eatsLevel;
+	protected int hunger;
+	protected int health;
+	protected int speed;
+	protected int maxHealth;
+	protected int maxHunger;
+	protected String name;
+	protected String description;
+	protected boolean done; // Whether or not the animal is done for the day or not
 
 	public boolean getDone()
 	{

@@ -9,10 +9,10 @@ package com.SSUJ.vegetation;
 
 public class Vegetation {
 	
-	private int foodLevel;
-	private String name;
-	private String description;
-	private int maxFoodLevel;
+	protected int foodLevel;
+	protected String name;
+	protected String description;
+	protected int maxFoodLevel;
 	
 	public void generate()
 	{

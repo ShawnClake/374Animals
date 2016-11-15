@@ -35,6 +35,8 @@ public class Menu {
 			while(choice != "begin" || choice != "quit" || choice != "about"){
 				System.out.println("That was not a correct choice.");
 				System.out.println("Please enter either 'begin', 'quit', or 'about'");
+				choice = in.nextLine(); 
+				choice = choice.toLowerCase();
 			}
 			if(choice.equals("begin")){
 				begin(simulation);

@@ -1,5 +1,5 @@
 package com.SSUJ.animal;
-
+import java.util.Random;
 public class Rabbit extends Animal {
 
 	
