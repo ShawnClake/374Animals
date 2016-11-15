@@ -39,7 +39,7 @@ public class Menu {
 				choice = choice.toLowerCase();
 			}
 			if(choice.equals("begin")){
-				begin(simulation);
+				begin(simulation, in);
 				continue RUN;
 			}
 			if(choice.equals("about")){
@@ -53,8 +53,7 @@ public class Menu {
 		
 	}
 	
-	public static void begin(Simulation sim){
-		Scanner in = new Scanner(System.in);
+	public static void begin(Simulation sim, Scanner in){
 		sim.getUI().instructions();
 		//get days and x and y sizes
 		System.out.println("Chose the number of days to run the simulation for (an integer value with a max of 60)");
@@ -70,10 +69,12 @@ public class Menu {
 		System.out.println("NOTE: Max allowed size is 100x100.");
 		System.out.println("Enter value for x coordinate:");
 		int xcoor = in.nextInt();
+
 		while(xcoor > 100){
 			System.out.println("The x -coordinate can be no larger than 100.");
 			System.out.println("Please enter new value for x-coordinate length:");
 			xcoor = in.nextInt();
+
 		}
 		System.out.println("Enter value for y coordinate:");
 		int ycoor = in.nextInt();
@@ -90,9 +91,8 @@ public class Menu {
 		//initialize the simulation
 		sim.initialize();
 		//run the simulation
-		sim.simulate();
+		sim.simulate(in);
 		
-		in.close();
 	}
 	
 	public static void quit(){

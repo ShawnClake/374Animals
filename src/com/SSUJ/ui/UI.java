@@ -33,15 +33,15 @@ public class UI {
 		System.out.println("and vegetation are randomly generated in the world and behave randomly as well. ");
 		System.out.println("Each animal is classified as either predator or prey, and each type of animal has ");
 		System.out.println("different characteristics such as hunger, speed, and eating levels. When two animals");
-		System.out.println(" end up in the same place, one sill eat the other. If and animal and some");
-		System.out.println(" vegetation end up in the same area, the animal will go and eat the vegetation. At the beginning");
-		System.out.println( " you will be able to chose the size of the world you want these animals to live in as well as ");
+		System.out.println("end up in the same place, one sill eat the other. If and animal and some");
+		System.out.println("vegetation end up in the same area, the animal will go and eat the vegetation. At the beginning");
+		System.out.println( "you will be able to chose the size of the world you want these animals to live in as well as ");
 		System.out.println( "how many days you want the simulation to run for. The simulation will then begin for the set number");
-		System.out.println( " of days specified.");
+		System.out.println( "of days specified.");
 		System.out.println("");
 	}
 	
-	public void printWorld(Tile[][] map, int x, int y){
+	public void printWorld(Tile[][] map, int x, int y, Scanner in){
 		//legend for map
 		System.out.println("Tile Legend:");
 		System.out.println("\t* represents vegeation");
@@ -76,7 +76,6 @@ public class UI {
 		System.out.println("");
 		//give option to print out individual tile
 		String print = "";
-		Scanner in = new Scanner(System.in);
 		System.out.println("Would you like to print out and individual tile's stats?(enter anything for yes and 'no' for no):");
 		print = in.nextLine();
 		print = print.toLowerCase();
@@ -87,12 +86,12 @@ public class UI {
 			xval = in.nextInt();
 			System.out.println("Enter the y-coordinate: ");
 			yval = in.nextInt();
-			printTile(map[xval][yval]);
+			printTile(map[yval][xval]);
+			in.nextLine();
 			System.out.println("Would you like to continue printing tiles? (enter no to stop): ");
 			print = in.nextLine();
 			print = print.toLowerCase();
 		}
-		in.close();
 	}
 	
 	public char printTileSymbol(Tile t){

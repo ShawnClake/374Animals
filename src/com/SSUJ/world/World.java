@@ -313,7 +313,7 @@ public class World {
 	
 	public Tile getTile(int x, int y)
 	{
-		return this.map[y][x];
+		return this.map[x][y];
 	}
 	
 	public int killAnimal(int x, int y)

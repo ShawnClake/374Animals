@@ -51,24 +51,32 @@ public class Simulation {
 		ui.log(world.nextDay());
 	}
 	
-	public void simulate(){
+	public void simulate(Scanner in){
 		//loop through days
 		String cont = "go";
 		int daysToSkip = 0;
 		for(int i = 0; i <= this.length; i++){
 			//call next day & print out log
+			System.out.println("");
 			nextDay();
 			//print out world
-			if(cont == "go"){
-				ui.printWorld(world.getMap(), world.getX(), world.getY());	
+			if(cont.equals("go")){
+				in.nextLine();
+				System.out.println("Press enter to continue.");
+				System.out.println("");
+				ui.printWorld(world.getMap(), world.getX(), world.getY(), in);	
 			//print out days remaining
 				ui.daysRemaining(length, world.getDay());
 			}
-			if(cont == "day"){
+			if(cont.equals("day")){
 				daysToSkip--;//after each day reduce the days to skip
 			}
+			if(daysToSkip - 1 == 0){
+				in.nextLine();
+			}
+			
 			if(daysToSkip == 0){//only print this if not skipping days
-				Scanner in = new Scanner(System.in);
+				
 				//no matter what log will print
 				System.out.println("You may now deside how to continue the simulation.");
 				System.out.println("Chose from the following options:");
@@ -78,7 +86,7 @@ public class Simulation {
 				System.out.println("\t'quit' : quit the simulation and return to the main menu.");
 				cont = in.nextLine();
 				cont = cont.toLowerCase();
-				while((cont!="go") && (cont!="end") && (cont!="day") && (cont!="quit")){
+				while((!cont.equals("go")) && (!cont.equals("end")) && (!cont.equals("day")) && (!cont.equals("quit"))){
 					System.out.println("Invalid choice!");
 					System.out.println("Please enter only 'go', 'end', 'day', or 'quit':");
 					cont = in.nextLine();
@@ -86,34 +94,41 @@ public class Simulation {
 				}
 				//continue printing everything == go, here nothing changes
 				//skip to end == end make days 60
-				if(cont == "end"){
+				if(cont.equals("end")){
 					daysToSkip = 60;
 				}
 				//skip to certain day == day and enter int days
-				if(cont == "day"){
+				if(cont.equals("day")){
 					System.out.println("Enter number of days to skip:");
 					System.out.println("NOTE: If number you enter is larger than days remaining, simulation will skip to end.");
 					daysToSkip = in.nextInt();
 				}
 				//end = quit
-				if(cont == "quit"){
+				if(cont.equals("quit")){
 					System.out.println("Returning to main menu...");
+					System.out.println("");
+					System.out.println("");
+					System.out.println("");
 					break;
 				}
 				//if last day is the next day, print out everything anyways
 				if((i + 1) == this.length){
 					cont = "go";
 				}
-				//if last day, pause befor exiting to main menu
+				//if last day, pause before exiting to main menu
 				if(i == this.length){
 					System.out.println("Simulation is over.");
 					System.out.println("To continue back to main menu, press enter.");
 					cont = in.nextLine();
 				}
-				in.close();
+				
 			}
 			
 		}
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
 	}
 	
 }
