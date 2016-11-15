@@ -51,8 +51,8 @@ public class World {
 				
 				int randomExhaustion = rn.nextInt(2);
 				
-				int animalChance = rn.nextInt(5);
-				int vegetationChance = rn.nextInt(4);
+				int animalChance = rn.nextInt(16);
+				int vegetationChance = rn.nextInt(13);
 				int randomAnimal = 10;
 				int randomVegetation = 3;
 					
@@ -300,7 +300,7 @@ public class World {
 	
 	public Tile getTile(int x, int y)
 	{
-		return this.map[x][y];
+		return this.map[y][x];
 	}
 	
 	public int killAnimal(int x, int y)
