@@ -54,9 +54,9 @@ public class UI {
 		for(yy = 0; yy < y; yy++){
 			for(xx = 0; xx < x; xx++){
 				if(xx == 0){
-					System.out.print("|");
+					System.out.print("| ");
 				}
-				System.out.print(printTileSymbol(map[yy][xx]) + "|");
+				System.out.print(printTileSymbol(map[yy][xx]) + " |");
 			}
 			System.out.print(yy);//row number
 			System.out.println("");
@@ -72,7 +72,8 @@ public class UI {
 			}
 			System.out.print(xx +" ");
 		}
-		
+		System.out.println("");
+		System.out.println("");
 		//give option to print out individual tile
 		String print = "";
 		Scanner in = new Scanner(System.in);
