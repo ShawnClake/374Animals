@@ -23,12 +23,7 @@ public class World {
 	private Tile[][] map; // The map array is formatted like: Tile[y][x] WHERE top left corner is 0,0
 	private int day;
 	
-	public World(){
-		for(int i = 0; i < 100; i++){
-			for(int j = 0; j < 100; j++)
-				map[i][j] = new Tile();
-		}
-	}
+	
 
 	public void generate()
 	{
