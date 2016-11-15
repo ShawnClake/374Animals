@@ -58,7 +58,7 @@ public class World {
 				if(animalChance == 1)
 					 randomAnimal = rn.nextInt(10);
 
-				if(animalChance == 1)	
+				if(vegetationChance == 1)	
 					randomVegetation = rn.nextInt(3);
 					
 				//sim.initialize();
