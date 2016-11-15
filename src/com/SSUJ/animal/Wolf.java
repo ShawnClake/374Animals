@@ -8,8 +8,8 @@ public void generate(){
 	Random ran = new Random();
 	int x = ran.nextInt(11) + 40;		//Random number between 10-20
 	
-		eatsLevel = 5;
-		hunger = 0;		//All animals start at a random hunger between 0-5 // Hunger is between 0-10 for catepillars
+		eatsLevel = 4;
+		hunger = 90;		//All animals start at a random hunger between 0-5 // Hunger is between 0-10 for catepillars
 		health = x;
 		speed = 5;
 		maxHealth = 90;
@@ -17,7 +17,8 @@ public void generate(){
 		name = "Wolf";
 		description = "Wolf: Eats squirrels and deer. Is an apex predator";
 				
-		
+		eats = EatType.PREDATOR;
+		done = false;
 		
 		
 	}

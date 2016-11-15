@@ -9,8 +9,8 @@ public void generate(){
 	int x = ran.nextInt(11) + 5;		//Random number between 5-15
 	
 	
-		eatsLevel = 1;
-		hunger = 0;		
+		eatsLevel = 4;
+		hunger = 20;		
 		health = x;
 		speed = 2;
 		maxHealth = 20;
@@ -18,7 +18,8 @@ public void generate(){
 		name = "Mouse";
 		description = "Mouse: Eats grass and from trees. Is eaten by the fox and hawk";
 				
-		
+		eats = EatType.PREY;
+		done = false;
 		
 		
 	}

@@ -9,8 +9,8 @@ public void generate(){
 	
 	
 	
-		eatsLevel = 1;
-		hunger = 0;		
+		eatsLevel = 2;
+		hunger = 10;		
 		health = x;
 		speed = 1;
 		maxHealth = 10;
@@ -18,7 +18,8 @@ public void generate(){
 		name = "Grasshoper";
 		description = "Grasshoper: Eats grass and from trees. Is eaten by the fox and hawk";
 				
-		
+		eats = EatType.PREY;
+		done = false;
 		
 		
 	}

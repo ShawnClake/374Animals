@@ -15,7 +15,7 @@ public class Simulation {
 	private World world;//world sim will be ran in
 	private int length;
 	private UI ui;
-	
+
 	public World getWorld()
 	{
 		return this.world;
@@ -33,12 +33,12 @@ public class Simulation {
 	
 	public void initialize()
 	{
-		
+		world.generate();			
 	}
 	
 	public UI getUI()
 	{
-		return this.ui;
+		return ui;
 	}
 	
 	public void nextDay()
