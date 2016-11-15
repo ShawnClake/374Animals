@@ -29,6 +29,7 @@ public class World {
 	{
 		//this.x = x;
 		//this.y = y; Already done
+		this.map = new Tile[this.y][this.x;
 		this.day = 0;
 		
 			/**
