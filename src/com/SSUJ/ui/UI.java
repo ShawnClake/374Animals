@@ -56,7 +56,7 @@ public class UI {
 				if(xx == 0){
 					System.out.print("| ");
 				}
-				System.out.print(printTileSymbol(map[yy][xx]) + " |");
+				System.out.print(printTileSymbol(map[yy][xx]) + " | ");
 			}
 			System.out.print(yy);//row number
 			System.out.println("");
@@ -70,7 +70,7 @@ public class UI {
 			if(xx < 10){
 				System.out.print(" ");
 			}
-			System.out.print(xx +" ");
+			System.out.print(xx +"  ");
 		}
 		System.out.println("");
 		System.out.println("");
