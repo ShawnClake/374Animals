@@ -22,6 +22,13 @@ public class World {
 	private int y; // Size of map in y dir
 	private Tile[][] map; // The map array is formatted like: Tile[y][x] WHERE top left corner is 0,0
 	private int day;
+	
+	public World(){
+		for(int i = 0; i < 100; i++){
+			for(int j = 0; j < 100; j++)
+				map[i][j] = new Tile();
+		}
+	}
 
 	public void generate()
 	{
@@ -45,7 +52,6 @@ public class World {
 			
 			for(int m=0;m<x;m++){
 				
-
 				
 				int randomExhaustion = rn.nextInt(2);
 				
