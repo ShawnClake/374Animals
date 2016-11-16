@@ -15,17 +15,19 @@ The [Sask Wildlife] federation has a desire to study the life cycle of animals t
 ## Current Feature List ##
 * Planning stage - UML, Class/Sequence Diagrams
 * Stub coding
-* Eating animals and vegetation (Undergoing testing)
-* Using the simulation (Undergoing testing)
+* Eating animals and vegetation 
+* Using the simulation 
+* Generating a simulation 
+* Adding x number of animals and y number of vegetation 
+* Adding a UI 
+* A log of daily events
 
 ## Upcoming Features ##
-* Generating a simulation (In progress)
-* Adding x number of animals and y number of vegetation (In progress)
-* Adding a UI (In progress)
-* A log of daily events (In progress)
+* Organism class
+* Cleanup, Documentation, Optomizations
 
 ## Planned Features ##
-* Documentation
+* ?
 
 ## Planned supported devices ##
 * Java supported platforms
