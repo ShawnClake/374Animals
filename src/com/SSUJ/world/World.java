@@ -22,6 +22,7 @@ public class World {
 	private int y; // Size of map in y dir
 	private Tile[][] map; // The map array is formatted like: Tile[y][x] WHERE top left corner is 0,0
 	private int day;
+	private int[13] counts;
 	
 	
 
@@ -38,6 +39,11 @@ public class World {
 		Random rn = new Random();		
 		//Tile[][] mapp = new Tile[x][y];
 
+		for(int i = 0; i < 13; i++)	
+			counts[i] = 0;
+
+		
+		
 		for(int n=0;n<y;n++){
 			
 			/*alternative method of printing to console while generating map
@@ -67,6 +73,43 @@ public class World {
 				genTile.generate(randomAnimal,randomVegetation,randomExhaustion);
 					
 				this.map[n][m] = genTile;
+				
+				if(randomAnimal != 10)
+				{
+				
+					switch(randomAnimal)
+					{
+						case 0: count[0]++; break;
+						case 1: count[1]++; break;
+						case 2: count[2]++; break;
+						case 3: count[3]++; break;
+						case 4: count[4]++; break;
+						case 5: count[5]++; break;
+						case 6: count[6]++; break;
+						case 7: count[7]++; break;
+						case 8: count[8]++; break;
+						case 9: count[9]++; break;
+						
+						
+						
+					}
+		
+				}
+				
+				if(randomVegetation != 4)
+				{
+				
+					switch(randomVegetation)
+					{
+						case 0: count[10]++; break;
+						case 1: count[11]++; break;
+						case 2: count[12]++; break;
+
+						
+					}
+		
+				}
+				
 				/*The following print statements are used if Trevor wants to see the tile as it is generated*/
 				/*
 				if(genTile.getAnimal()!= null){
@@ -113,6 +156,11 @@ public class World {
 	
 	public int getX(){
 		return this.x;
+	}
+	
+	public int[] getCounts(){
+		return this.count;
+		
 	}
 	
 	public List<String> nextDay()
@@ -201,6 +249,21 @@ public class World {
 
 							if(animal.dead())
 							{
+								switch(animal.getName(){
+									case "Bluejay": count[0]--; break;
+									case "Caterpillar": count[1]--; break;
+									case "Deer": count[2]--; break;
+									case "Fox": count[3]--; break;
+									case "Grasshoper": count[4]--; break;
+									case "Hawk": count[5]--; break;
+									case "Mouse": count[6]--; break;
+									case "Rabbit": count[7]--; break;
+									case "Squirrel": count[8]--; break;
+									case "Wolf": count[9]--; break;
+											
+								}
+								
+								
 								tile.setAnimal(null);
 								events.add(animal.getName() + " died by starvation.");
 							}
@@ -240,6 +303,22 @@ public class World {
 								animal.changeHunger(animal2.kill());
 								tile2.setAnimal(animal);
 								tile.setAnimal(null);
+								
+								switch(animal2.getName(){
+									case "Bluejay": count[0]--; break;
+									case "Caterpillar": count[1]--; break;
+									case "Deer": count[2]--; break;
+									case "Fox": count[3]--; break;
+									case "Grasshoper": count[4]--; break;
+									case "Hawk": count[5]--; break;
+									case "Mouse": count[6]--; break;
+									case "Rabbit": count[7]--; break;
+									case "Squirrel": count[8]--; break;
+									case "Wolf": count[9]--; break;
+											
+								}
+								
+								
 
 								events.add(animal.getName() + " encountered a " + animal2.getName() + " and killed it.");
 							}
@@ -248,6 +327,22 @@ public class World {
 								animal2.changeHunger(animal.kill());
 								tile.setAnimal(null);
 								killed = true;
+
+								switch(animal.getName(){
+									case "Bluejay": count[0]--; break;
+									case "Caterpillar": count[1]--; break;
+									case "Deer": count[2]--; break;
+									case "Fox": count[3]--; break;
+									case "Grasshoper": count[4]--; break;
+									case "Hawk": count[5]--; break;
+									case "Mouse": count[6]--; break;
+									case "Rabbit": count[7]--; break;
+									case "Squirrel": count[8]--; break;
+									case "Wolf": count[9]--; break;
+											
+								}
+
+
 
 								events.add(animal.getName() + " encountered a " + animal2.getName() + " and was killed by it.");
 							}
@@ -259,6 +354,15 @@ public class World {
 
 							tile2.getAnimal().changeHunger(vegetation2.eat());
 							tile2.setVegetation(null);
+							
+							switch(vegetation2.getName(){
+									case "Grass": count[10]--; break;
+									case "Tree": count[11]--; break;
+									case "Shrub": count[12]--; break;
+									
+											
+								}
+							
 
 							events.add(animal.getName() + " found " + vegetation2.getName() + " and ate it.");
 
@@ -276,6 +380,22 @@ public class World {
 
 							if(animal.dead())
 							{
+								switch(animal.getName(){
+									case "Bluejay": count[0]--; break;
+									case "Caterpillar": count[1]--; break;
+									case "Deer": count[2]--; break;
+									case "Fox": count[3]--; break;
+									case "Grasshoper": count[4]--; break;
+									case "Hawk": count[5]--; break;
+									case "Mouse": count[6]--; break;
+									case "Rabbit": count[7]--; break;
+									case "Squirrel": count[8]--; break;
+									case "Wolf": count[9]--; break;
+											
+								}
+								
+								
+								
 								tile2.setAnimal(null);
 								events.add(animal.getName() + " died by starvation.");
 							}
