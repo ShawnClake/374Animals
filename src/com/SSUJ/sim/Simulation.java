@@ -15,10 +15,12 @@ public class Simulation {
 	private World world;//world sim will be ran in
 	private int length;
 	private UI ui;
+	bool tombWorld;
 
 	public Simulation(){
 		ui = new UI();
 		world = new World();
+		tombWorld = false;
 	}
 	
 	public World getWorld()
@@ -65,6 +67,34 @@ public class Simulation {
 				System.out.println("Press enter to continue.");
 				System.out.println("");
 				ui.printWorld(world.getMap(), world.getX(), world.getY(), in);	
+				
+				
+				//Print out the world stats
+				System.out.println("Here are the current stats for the world");
+				if(counts[0] == 0 && counts[1] == 0 && counts[2] == 0 && counts[3] == 0 && counts[4] == 0 && counts[5] == 0 && counts[6] == 0 && counts[7] == 0 && counts[8] == 0 && counts[9] == 0)	//If there are no animals
+				{
+					tombWorld = true;
+					System.out.println("This is no world. It's a tomb!");
+					
+				} else
+				{
+					System.out.println("There are currently {0} Bluejays", count[0]);
+					System.out.println("There are currently {0} Caterpillars", count[1]);
+					System.out.println("There are currently {0} Deer", count[2]);
+					System.out.println("There are currently {0} Foxex", count[3]);
+					System.out.println("There are currently {0} Grasshopers", count[4]);
+					System.out.println("There are currently {0} Hawks", count[5]);
+					System.out.println("There are currently {0} Mice", count[6]);
+					System.out.println("There are currently {0} Rabbits", count[7]);
+					System.out.println("There are currently {0} Squirrels", count[8]);
+					System.out.println("There are currently {0} Wolves", count[9]);
+					System.out.println("There are currently {0} Grasses", count[10]);
+					System.out.println("There are currently {0} Shrubs", count[11]);
+					System.out.println("There are currently {0} Trees", count[12]);
+				}
+				
+				
+				
 			//print out days remaining
 				ui.daysRemaining(length, world.getDay());
 			}
