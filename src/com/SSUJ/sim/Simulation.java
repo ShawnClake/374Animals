@@ -63,8 +63,8 @@ public class Simulation {
 			nextDay();
 			//print out world
 			if(cont.equals("go")){
-				in.nextLine();
 				System.out.println("Press enter to continue.");
+				in.nextLine();
 				System.out.println("");
 				ui.printWorld(world.getMap(), world.getX(), world.getY(), in);	
 				
