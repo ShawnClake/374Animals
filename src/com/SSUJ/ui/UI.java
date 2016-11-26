@@ -82,6 +82,7 @@ public class UI {
 		while(!print.equals("no")){
 			int xval;
 			int yval;
+			System.out.println("Now give the x and y coordinates.");
 			System.out.println("Enter the x-coordinate: ");
 			xval = in.nextInt();
 			System.out.println("Enter the y-coordinate: ");
