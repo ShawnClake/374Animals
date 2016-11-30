@@ -67,6 +67,9 @@ public class Menu {
 		//x and y sizes
 		System.out.println("Now we need to set the size of the grid the simulation will be ran on.");
 		System.out.println("NOTE: Max allowed size is 100x100.");
+		System.out.println("While also select the number of animals/plants that are generated or allow them to be random.");
+		System.out.println("NOTE: Max allowed is the total tiles, therefore 10,000 for a 100x100 grid");
+
 		System.out.println("Enter value for x coordinate:");
 		int xcoor = in.nextInt();
 
@@ -78,18 +81,49 @@ public class Menu {
 		}
 		System.out.println("Enter value for y coordinate:");
 		int ycoor = in.nextInt();
+		in.nextLine(); //necessary for eating nextline character
+
 		while(ycoor > 100){
 			System.out.println("The y-coordinate can be no larger than 100.");
 			System.out.println("Please enter new value for y-coordinate length:");
 			ycoor = in.nextInt();
+			in.nextLine();
 		}
+		
 		//set x and y lengths
 		sim.getWorld().setX(xcoor);
 		sim.getWorld().setY(ycoor);
 		
+		int numberOfTiles = xcoor*ycoor;
+		int animalNumber;
+		
+		do {
+			System.out.println("Enter value for percentage of animals, maximum is 100:");
+			System.out.println("Enter 'NO' if you would like to go with standard percentage of animals. ");
+
+			String animalChoice = in.nextLine();
+			try {
+				animalNumber = Integer.parseInt(animalChoice);
+			} catch (NumberFormatException e) {
+				animalNumber = 6; //default 6.25%
+			}
+		} while  (animalNumber > numberOfTiles);
+		
+		int plantNumber;
+
+		do {
+			System.out.println("Enter value for number of plants, maximum is 100:");
+			System.out.println("Enter 'NO' if you would like to go with standard percentage of plants. ");
+			String plantChoice = in.nextLine();
+			try {
+				plantNumber = Integer.parseInt(plantChoice);
+			} catch (NumberFormatException e) {
+				plantNumber = 8; //default 8.33%
+			}
+		} while  (plantNumber > numberOfTiles);
 		
 		//initialize the simulation
-		sim.initialize();
+		sim.initialize(animalNumber, plantNumber);
 		//run the simulation
 		sim.simulate(in);
 		

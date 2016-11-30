@@ -26,7 +26,7 @@ public class World {
 	
 	
 
-	public void generate()
+	public void generate(int animalNumber, int plantNumber)
 	{
 		//this.x = x;
 		//this.y = y; Already done
@@ -59,17 +59,19 @@ public class World {
 				
 				int randomExhaustion = rn.nextInt(2);
 				
-				int animalChance = rn.nextInt(16);
-				int vegetationChance = rn.nextInt(13);
+				int animalChance = rn.nextInt(100); //previously set to rn.nextInt(16), therefore standard is 16
+				int vegetationChance = rn.nextInt(100); //previously set to rn.nextInt(13), therefore standard is 13
 				int randomAnimal = 10;
 				int randomVegetation = 3;
 					
-				if(animalChance == 1)
+				if(animalChance < animalNumber){
+					System.out.println("animal");
 					 randomAnimal = rn.nextInt(10);
-
-				if(vegetationChance == 1)	
+				}
+				if(vegetationChance < plantNumber){
+					System.out.println("plant");
 					randomVegetation = rn.nextInt(3);
-					
+				}
 				//sim.initialize();
 				Tile genTile = new Tile();
 				genTile.generate(randomAnimal,randomVegetation,randomExhaustion);
@@ -90,10 +92,7 @@ public class World {
 						case 6: counts[6]++; break;
 						case 7: counts[7]++; break;
 						case 8: counts[8]++; break;
-						case 9: counts[9]++; break;
-						
-						
-						
+						case 9: counts[9]++; break;							
 					}
 		
 				}
@@ -111,6 +110,25 @@ public class World {
 					}
 		
 				}
+				
+				/*The following print statements are used if Trevor wants to see the total number of animals and plans generated*/
+
+				System.out.println("Total Animals: ");
+				int sumAnimal=0;
+				for(int i = 0; i < 10; i++){
+					sumAnimal = sumAnimal + counts[i];
+				}	
+				System.out.println(sumAnimal);
+
+				
+				System.out.println("Total Plants: ");
+				int sumPlants=0;
+				for(int i = 10; i < 13; i++){
+					sumPlants = sumPlants + counts[i];
+				}	
+				System.out.println(sumPlants);
+
+				
 				
 				/*The following print statements are used if Trevor wants to see the tile as it is generated*/
 				/*
@@ -465,3 +483,4 @@ public class World {
 	}
 
 }
+
