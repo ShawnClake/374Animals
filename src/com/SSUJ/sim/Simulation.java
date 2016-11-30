@@ -38,9 +38,9 @@ public class Simulation {
 		this.length = l;
 	}
 	
-	public void initialize()
+	public void initialize(int animalnum, int plantnum)
 	{
-		world.generate();			
+		world.generate(animalnum, plantnum);			
 	}
 	
 	public UI getUI()
