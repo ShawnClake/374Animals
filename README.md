@@ -21,13 +21,14 @@ The [Sask Wildlife] federation has a desire to study the life cycle of animals t
 * Adding x number of animals and y number of vegetation 
 * Adding a UI 
 * A log of daily events
+* Added a count of alive and dead animals
+* Added the ability to choose what to spawn
 
 ## Upcoming Features ##
-* Organism class
-* Cleanup, Documentation, Optomizations
+* Done
 
 ## Planned Features ##
-* ?
+* Done
 
 ## Planned supported devices ##
 * Java supported platforms
