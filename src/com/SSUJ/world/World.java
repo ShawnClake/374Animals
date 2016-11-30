@@ -22,7 +22,7 @@ public class World {
 	private int y; // Size of map in y dir
 	private Tile[][] map; // The map array is formatted like: Tile[y][x] WHERE top left corner is 0,0
 	private int day;
-	private int[13] counts;
+	private int[] counts;
 	
 	
 
@@ -39,6 +39,8 @@ public class World {
 		Random rn = new Random();		
 		//Tile[][] mapp = new Tile[x][y];
 
+		counts = new int[13];
+		
 		for(int i = 0; i < 13; i++)	
 			counts[i] = 0;
 
@@ -79,16 +81,16 @@ public class World {
 				
 					switch(randomAnimal)
 					{
-						case 0: count[0]++; break;
-						case 1: count[1]++; break;
-						case 2: count[2]++; break;
-						case 3: count[3]++; break;
-						case 4: count[4]++; break;
-						case 5: count[5]++; break;
-						case 6: count[6]++; break;
-						case 7: count[7]++; break;
-						case 8: count[8]++; break;
-						case 9: count[9]++; break;
+						case 0: counts[0]++; break;
+						case 1: counts[1]++; break;
+						case 2: counts[2]++; break;
+						case 3: counts[3]++; break;
+						case 4: counts[4]++; break;
+						case 5: counts[5]++; break;
+						case 6: counts[6]++; break;
+						case 7: counts[7]++; break;
+						case 8: counts[8]++; break;
+						case 9: counts[9]++; break;
 						
 						
 						
@@ -101,9 +103,9 @@ public class World {
 				
 					switch(randomVegetation)
 					{
-						case 0: count[10]++; break;
-						case 1: count[11]++; break;
-						case 2: count[12]++; break;
+						case 0: counts[10]++; break;
+						case 1: counts[11]++; break;
+						case 2: counts[12]++; break;
 
 						
 					}
@@ -159,7 +161,7 @@ public class World {
 	}
 	
 	public int[] getCounts(){
-		return this.count;
+		return this.counts;
 		
 	}
 	
@@ -249,17 +251,17 @@ public class World {
 
 							if(animal.dead())
 							{
-								switch(animal.getName(){
-									case "Bluejay": count[0]--; break;
-									case "Caterpillar": count[1]--; break;
-									case "Deer": count[2]--; break;
-									case "Fox": count[3]--; break;
-									case "Grasshoper": count[4]--; break;
-									case "Hawk": count[5]--; break;
-									case "Mouse": count[6]--; break;
-									case "Rabbit": count[7]--; break;
-									case "Squirrel": count[8]--; break;
-									case "Wolf": count[9]--; break;
+								switch(animal.getName()){
+									case "Bluejay": counts[0]--; break;
+									case "Caterpillar": counts[1]--; break;
+									case "Deer": counts[2]--; break;
+									case "Fox": counts[3]--; break;
+									case "Grasshoper": counts[4]--; break;
+									case "Hawk": counts[5]--; break;
+									case "Mouse": counts[6]--; break;
+									case "Rabbit": counts[7]--; break;
+									case "Squirrel": counts[8]--; break;
+									case "Wolf": counts[9]--; break;
 											
 								}
 								
@@ -304,17 +306,17 @@ public class World {
 								tile2.setAnimal(animal);
 								tile.setAnimal(null);
 								
-								switch(animal2.getName(){
-									case "Bluejay": count[0]--; break;
-									case "Caterpillar": count[1]--; break;
-									case "Deer": count[2]--; break;
-									case "Fox": count[3]--; break;
-									case "Grasshoper": count[4]--; break;
-									case "Hawk": count[5]--; break;
-									case "Mouse": count[6]--; break;
-									case "Rabbit": count[7]--; break;
-									case "Squirrel": count[8]--; break;
-									case "Wolf": count[9]--; break;
+								switch(animal2.getName()){
+									case "Bluejay": counts[0]--; break;
+									case "Caterpillar": counts[1]--; break;
+									case "Deer": counts[2]--; break;
+									case "Fox": counts[3]--; break;
+									case "Grasshoper": counts[4]--; break;
+									case "Hawk": counts[5]--; break;
+									case "Mouse": counts[6]--; break;
+									case "Rabbit": counts[7]--; break;
+									case "Squirrel": counts[8]--; break;
+									case "Wolf": counts[9]--; break;
 											
 								}
 								
@@ -328,17 +330,17 @@ public class World {
 								tile.setAnimal(null);
 								killed = true;
 
-								switch(animal.getName(){
-									case "Bluejay": count[0]--; break;
-									case "Caterpillar": count[1]--; break;
-									case "Deer": count[2]--; break;
-									case "Fox": count[3]--; break;
-									case "Grasshoper": count[4]--; break;
-									case "Hawk": count[5]--; break;
-									case "Mouse": count[6]--; break;
-									case "Rabbit": count[7]--; break;
-									case "Squirrel": count[8]--; break;
-									case "Wolf": count[9]--; break;
+								switch(animal.getName()){
+									case "Bluejay": counts[0]--; break;
+									case "Caterpillar": counts[1]--; break;
+									case "Deer": counts[2]--; break;
+									case "Fox": counts[3]--; break;
+									case "Grasshoper": counts[4]--; break;
+									case "Hawk": counts[5]--; break;
+									case "Mouse": counts[6]--; break;
+									case "Rabbit": counts[7]--; break;
+									case "Squirrel": counts[8]--; break;
+									case "Wolf": counts[9]--; break;
 											
 								}
 
@@ -355,10 +357,10 @@ public class World {
 							tile2.getAnimal().changeHunger(vegetation2.eat());
 							tile2.setVegetation(null);
 							
-							switch(vegetation2.getName(){
-									case "Grass": count[10]--; break;
-									case "Tree": count[11]--; break;
-									case "Shrub": count[12]--; break;
+							switch(vegetation2.getName()){
+									case "Grass": counts[10]--; break;
+									case "Tree": counts[11]--; break;
+									case "Shrub": counts[12]--; break;
 									
 											
 								}
@@ -380,17 +382,17 @@ public class World {
 
 							if(animal.dead())
 							{
-								switch(animal.getName(){
-									case "Bluejay": count[0]--; break;
-									case "Caterpillar": count[1]--; break;
-									case "Deer": count[2]--; break;
-									case "Fox": count[3]--; break;
-									case "Grasshoper": count[4]--; break;
-									case "Hawk": count[5]--; break;
-									case "Mouse": count[6]--; break;
-									case "Rabbit": count[7]--; break;
-									case "Squirrel": count[8]--; break;
-									case "Wolf": count[9]--; break;
+								switch(animal.getName()){
+									case "Bluejay": counts[0]--; break;
+									case "Caterpillar": counts[1]--; break;
+									case "Deer": counts[2]--; break;
+									case "Fox": counts[3]--; break;
+									case "Grasshoper": counts[4]--; break;
+									case "Hawk": counts[5]--; break;
+									case "Mouse": counts[6]--; break;
+									case "Rabbit": counts[7]--; break;
+									case "Squirrel": counts[8]--; break;
+									case "Wolf": counts[9]--; break;
 											
 								}
 								
