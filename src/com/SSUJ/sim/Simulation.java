@@ -15,7 +15,7 @@ public class Simulation {
 	private World world;//world sim will be ran in
 	private int length;
 	private UI ui;
-	bool tombWorld;
+	boolean tombWorld;
 
 	public Simulation(){
 		ui = new UI();
@@ -67,30 +67,45 @@ public class Simulation {
 				in.nextLine();
 				System.out.println("");
 				ui.printWorld(world.getMap(), world.getX(), world.getY(), in);	
-				
+				int[] tempCounts = world.getCounts();
 				
 				//Print out the world stats
 				System.out.println("Here are the current stats for the world");
-				if(counts[0] == 0 && counts[1] == 0 && counts[2] == 0 && counts[3] == 0 && counts[4] == 0 && counts[5] == 0 && counts[6] == 0 && counts[7] == 0 && counts[8] == 0 && counts[9] == 0)	//If there are no animals
+				if(tempCounts[0] == 0 && tempCounts[1] == 0 && tempCounts[2] == 0 && tempCounts[3] == 0 && tempCounts[4] == 0 && tempCounts[5] == 0 && tempCounts[6] == 0 && tempCounts[7] == 0 && tempCounts[8] == 0 && tempCounts[9] == 0)	//If there are no animals
 				{
 					tombWorld = true;
 					System.out.println("This is no world. It's a tomb!");
 					
 				} else
 				{
-					System.out.println("There are currently {0} Bluejays", count[0]);
-					System.out.println("There are currently {0} Caterpillars", count[1]);
-					System.out.println("There are currently {0} Deer", count[2]);
-					System.out.println("There are currently {0} Foxex", count[3]);
-					System.out.println("There are currently {0} Grasshopers", count[4]);
-					System.out.println("There are currently {0} Hawks", count[5]);
-					System.out.println("There are currently {0} Mice", count[6]);
-					System.out.println("There are currently {0} Rabbits", count[7]);
-					System.out.println("There are currently {0} Squirrels", count[8]);
-					System.out.println("There are currently {0} Wolves", count[9]);
-					System.out.println("There are currently {0} Grasses", count[10]);
-					System.out.println("There are currently {0} Shrubs", count[11]);
-					System.out.println("There are currently {0} Trees", count[12]);
+					
+					if(tempCounts[0] != 0)
+						System.out.println("There are currently " + tempCounts[0] +  " Bluejays");
+					if(tempCounts[1] != 0)
+						System.out.println("There are currently " + tempCounts[1] +  " Caterpillars");
+					if(tempCounts[2] != 0)
+						System.out.println("There are currently " + tempCounts[2] +  " Deer");
+					if(tempCounts[3] != 0)
+						System.out.println("There are currently " + tempCounts[3] +  " Foxes");
+					if(tempCounts[4] != 0)
+						System.out.println("There are currently " + tempCounts[4] +  " Grasshopers");
+					if(tempCounts[5] != 0)
+						System.out.println("There are currently " + tempCounts[5] +  " Hawks");
+					if(tempCounts[6] != 0)
+						System.out.println("There are currently " + tempCounts[6] +  " Mice");
+					if(tempCounts[7] != 0)
+						System.out.println("There are currently " + tempCounts[7] +  " Rabbits");
+					if(tempCounts[8] != 0)
+						System.out.println("There are currently " + tempCounts[8] +  " Squirrels");
+					if(tempCounts[9] != 0)
+						System.out.println("There are currently " + tempCounts[9] +  " Wolves");
+					if(tempCounts[10] != 0)
+						System.out.println("There are currently " + tempCounts[10] + " Grasses");
+					if(tempCounts[11] != 0)
+						System.out.println("There are currently " + tempCounts[11] + " Shrubs");
+					if(tempCounts[12] != 0)
+						System.out.println("There are currently " + tempCounts[12] + " Trees");
+
 				}
 				
 				
