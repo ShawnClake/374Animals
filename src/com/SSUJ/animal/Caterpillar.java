@@ -12,12 +12,12 @@ public class Caterpillar extends Animal {
 		
 		
 		Random ran = new Random();
-		int x = ran.nextInt(10) + 1;		//Random number between 25-35
+		int x = ran.nextInt(10) + 1;		//Random number between 1-10
 		
 		
 		eatsLevel = 1;
 		hunger = 10;		
-		health = 10;
+		health = x;
 		speed = 1;
 		maxHealth = 10;
 		maxHunger = 10;
